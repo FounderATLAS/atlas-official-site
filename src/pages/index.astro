@@ -1,92 +1,89 @@
 ---
-import { Container, FeatureCard } from '@components/odyssey-theme';
-
+import { Icon } from 'astro-icon/components';
+import {
+	Container,
+	Button,
+	ThreeColumnTextSection,
+	CtaCardSection,
+} from '@components/odyssey-theme';
 import Layout from '../layouts/Page.astro';
 import HomeHeroSection from '../components/sections/heros/HomeHeroSection.astro';
+
+const seo = {
+	title: 'ATLAS | Asset & Technology Landscape Audit Solutions',
+	description: 'ATLAS helps organizations gain full visibility into their asset and technology landscape through comprehensive audits and strategic guidance.',
+};
 ---
 
-<Layout>
+<Layout {seo}>
 	<HomeHeroSection />
-	<Container>
-		<section class="feature-card__section">
-			<h2>Landing Pages</h2>
+
+	<ThreeColumnTextSection>
+		<div slot="column-1-body">
+			<h2>Asset Discovery</h2>
 			<p>
-				Use one of our landing pages to jumpstart your website or
-				ad campaign.
+				We identify and catalog every asset across your organization, 
+				giving you a single source of truth for your entire 
+				technology landscape.
 			</p>
-			<div class="feature-card__grid">
-				<FeatureCard href="/landing-pages/landing-1" title="Landing Page 1" imgSrc="/assets/images/home/screenshots/landing-1">
-				</FeatureCard>
-				<FeatureCard href="/landing-pages/landing-2" title="Landing Page 2" imgSrc="/assets/images/home/screenshots/landing-2">
-				</FeatureCard>
-			</div>
+		</div>
+		<Button slot="column-1-cta" href="/company/about">Learn More</Button>
+		<div slot="column-2-body">
+			<h2>Risk Assessment</h2>
+			<p>
+				We evaluate vulnerabilities, outdated systems, and compliance 
+				gaps so you can prioritize what matters most.
+			</p>
+		</div>
+		<Button slot="column-2-cta" href="/company/about" outlined>Learn More</Button>
+		<div slot="column-3-body">
+			<h2>Strategic Roadmap</h2>
+			<p>
+				We deliver clear recommendations and a prioritized action plan 
+				to optimize your technology investments.
+			</p>
+		</div>
+		<Button slot="column-3-cta" href="/company/about">Learn More</Button>
+	</ThreeColumnTextSection>
+
+	<Container>
+		<section class="why-atlas__section">
+			<h2>Why Choose ATLAS?</h2>
+			<p>
+				Most organizations don't have complete visibility into their technology 
+				assets. Shadow IT, outdated systems, and compliance gaps create hidden 
+				risks. ATLAS gives you clarity and control.
+			</p>
 		</section>
 	</Container>
 
-	<Container>
-		<section class="feature-card__section">
-			<h2>Company Pages</h2>
-			<p>
-				Use one of our prebuilt company pages for your about page, contact page,
-				legal pages, blog posts, etc.
-			</p>
-			<div class="feature-card__grid">
-				<FeatureCard href="/company/about" title="About Page" imgSrc="/assets/images/home/screenshots/about">
-				</FeatureCard>
-				<FeatureCard href="/company/contact" title="Contact Page" imgSrc="/assets/images/home/screenshots/contact">
-				</FeatureCard>
-				<FeatureCard href="/blog/" title="Blog Page" imgSrc="/assets/images/home/screenshots/blog">
-				</FeatureCard>
-				<FeatureCard
-					href="/blog/posts/remote-work-mental-health"
-					title="Blog Post"
-          imgSrc="/assets/images/home/screenshots/blog-post"
-				>
-				</FeatureCard>
-				<FeatureCard
-					href="/company/legal"
-					imgSrc="/assets/images/home/screenshots/legal"
-					title="Legal Page"
-				>
-				</FeatureCard>
-			</div>
-		</section>
-	</Container>
-
-	<Container>
-		<section class="feature-card__section">
-			<h2>Theme Pages</h2>
-			<p>Learn more about how to set up and use the Odyssey Theme.</p>
-			<div class="feature-card__grid">
-				<FeatureCard
-					href="/theme/get-started"
-					imgSrc="/assets/images/home/screenshots/get-started"
-					title="Get Started"
-				>
-				</FeatureCard>
-				<FeatureCard
-					href="/theme/style-guide"
-					imgSrc="/assets/images/home/screenshots/style-guide"
-					title="Style Guide"
-				>
-				</FeatureCard>
-			</div>
-		</section>
-	</Container>
+	<CtaCardSection
+		background="var(--theme-surface-2)"
+		color="var(--theme-on-surface-2)"
+	>
+		<h2>Ready to Get Started?</h2>
+		<p>
+			Contact us today to schedule your first asset and technology audit.
+		</p>
+		<Button href="/company/contact" customIcon>
+			Contact Us <Fragment slot="icon">
+				<Icon name="ic:baseline-chevron-right" />
+			</Fragment>
+		</Button>
+	</CtaCardSection>
 </Layout>
 
 <style>
-	.feature-card__section {
+	.why-atlas__section {
 		margin: var(--section-margin) auto;
+		text-align: center;
+		max-width: 800px;
 	}
-	.feature-card__grid {
-		display: grid;
-		grid-template-columns: repeat(2, 1fr);
-		gap: var(--theme-grid-gap);
+	.why-atlas__section h2 {
+		margin-bottom: 1rem;
 	}
-	@media (max-width: 768px) {
-		.feature-card__grid {
-			grid-template-columns: 1fr;
-		}
+	.why-atlas__section p {
+		font-size: var(--font-size-md);
+		opacity: 0.85;
 	}
 </style>

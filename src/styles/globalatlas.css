@@ -1,0 +1,324 @@
+/* ============================================
+   ATLAS THEME - Global Styles
+   ============================================ */
+
+:root {
+  /* ---- Brand Colors ---- */
+  --color-primary: #0A1628;       /* ATLAS Navy */
+  --color-accent: #C9A84C;        /* ATLAS Gold */
+  --color-background: #FFFFFF;    /* Clean white */
+  --color-text: #0A1628;          /* Navy for body text */
+
+  /* ---- Supporting Colors ---- */
+  --color-primary-light: #1a2d4a; /* Lighter navy for hover states */
+  --color-accent-light: #d4b965;  /* Lighter gold for hover states */
+  --color-accent-dark: #b08f3a;   /* Darker gold for active states */
+  --color-gray-light: #F5F5F5;    /* Light gray for backgrounds */
+  --color-gray-medium: #E0E0E0;   /* Medium gray for borders */
+  --color-gray-dark: #6B7280;     /* Dark gray for muted text */
+  --color-white: #FFFFFF;
+  --color-error: #DC2626;
+  --color-success: #16A34A;
+}
+
+/* ============================================
+   BASE STYLES
+   ============================================ */
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+/* ============================================
+   TYPOGRAPHY
+   ============================================ */
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-primary);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-top: 0;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2.25rem;
+}
+
+h3 {
+  font-size: 1.75rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+}
+
+p {
+  color: var(--color-text);
+  margin-bottom: 1rem;
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: color 150ms ease;
+}
+
+a:hover {
+  color: var(--color-accent-dark);
+}
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 150ms ease;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-light);
+  color: var(--color-white);
+}
+
+.btn-accent {
+  background-color: var(--color-accent);
+  color: var(--color-primary);
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 150ms ease;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.btn-accent:hover {
+  background-color: var(--color-accent-dark);
+  color: var(--color-primary);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--color-primary);
+  padding: 0.75rem 1.5rem;
+  border: 2px solid var(--color-primary);
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 150ms ease;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.btn-outline:hover {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.btn-gold-outline {
+  background-color: transparent;
+  color: var(--color-accent);
+  padding: 0.75rem 1.5rem;
+  border: 2px solid var(--color-accent);
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 150ms ease;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.btn-gold-outline:hover {
+  background-color: var(--color-accent);
+  color: var(--color-primary);
+}
+
+/* ============================================
+   SECTIONS
+   ============================================ */
+
+.section {
+  padding: 4rem 1.5rem;
+}
+
+.section--navy {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.section--navy h1,
+.section--navy h2,
+.section--navy h3,
+.section--navy h4 {
+  color: var(--color-white);
+}
+
+.section--navy p {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.section--navy a {
+  color: var(--color-accent);
+}
+
+.section--gray {
+  background-color: var(--color-gray-light);
+}
+
+.section--white {
+  background-color: var(--color-white);
+}
+
+/* ============================================
+   GOLD ACCENTS / HIGHLIGHTS
+   ============================================ */
+
+.text-gold {
+  color: var(--color-accent);
+}
+
+.text-navy {
+  color: var(--color-primary);
+}
+
+.text-muted {
+  color: var(--color-gray-dark);
+}
+
+.border-gold {
+  border-color: var(--color-accent);
+}
+
+.bg-navy {
+  background-color: var(--color-primary);
+}
+
+.bg-gold {
+  background-color: var(--color-accent);
+}
+
+.gold-underline {
+  border-bottom: 3px solid var(--color-accent);
+  padding-bottom: 0.25rem;
+  display: inline-block;
+}
+
+.gold-bar::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: var(--color-accent);
+  margin-top: 0.75rem;
+}
+
+/* ============================================
+   CARDS
+   ============================================ */
+
+.card {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-medium);
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: box-shadow 150ms ease, transform 150ms ease;
+}
+
+.card:hover {
+  box-shadow: 0 4px 12px rgba(10, 22, 40, 0.1);
+  transform: translateY(-2px);
+}
+
+.card--navy {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border: none;
+}
+
+.card--navy h3,
+.card--navy h4 {
+  color: var(--color-accent);
+}
+
+.card--gold-border {
+  border: 2px solid var(--color-accent);
+}
+
+/* ============================================
+   HEADER / NAV OVERRIDES
+   ============================================ */
+
+header {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+header a {
+  color: var(--color-white);
+}
+
+header a:hover {
+  color: var(--color-accent);
+}
+
+/* ============================================
+   FOOTER OVERRIDES
+   ============================================ */
+
+footer {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+footer a {
+  color: var(--color-accent);
+}
+
+footer a:hover {
+  color: var(--color-accent-light);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.25rem;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  .section {
+    padding: 3rem 1rem;
+  }
+}

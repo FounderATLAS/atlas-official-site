@@ -1,0 +1,36 @@
+/* ============================================
+   ATLAS THEME - Official Odyssey Override
+   ============================================ */
+
+:root {
+  /* OVERRIDE 100% OF ODYSSEY COLORS */
+  --theme-bg: #FFFFFF;
+  --theme-on-bg: #0A1628;
+
+  --theme-primary: #0A1628;
+  --theme-on-primary: #FFFFFF;
+
+  --theme-accent: #C9A84C;
+  --theme-on-accent: #0A1628;
+
+  --theme-surface-1: #F8F9FA;
+  --theme-on-surface-1: #0A1628;
+  --theme-surface-2: #F1F3F5;
+  --theme-on-surface-2: #0A1628;
+
+  --theme-shadow: rgba(10, 22, 40, 0.08);
+
+  /* Optional fine tuning */
+  --theme-shape-radius: 6px;
+}
+
+/* Disable dark mode completely */
+:root.theme-dark {
+  /* Force your brand colors always, no dark mode switch */
+  --theme-bg: #FFFFFF;
+  --theme-on-bg: #0A1628;
+  --theme-surface-1: #F8F9FA;
+  --theme-on-surface-1: #0A1628;
+  --theme-surface-2: #F1F3F5;
+  --theme-on-surface-2: #0A1628;
+}

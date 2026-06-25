@@ -108,7 +108,12 @@ const { navData, rightMenu } = Astro.props;
   #menuButton > span {
     color: var(--theme-on-bg);
     vertical-align: middle;
-  }
+    transition: color 150ms ease;
+}
+
+#menuButton:hover > span {
+    color: #C9A84C;
+}
   nav {
   display: flex;
   }
@@ -123,10 +128,11 @@ const { navData, rightMenu } = Astro.props;
     margin-right: 1rem;
     color: inherit;
     opacity: 0.72;
-    transition: opacity linear 150ms;
+    transition: opacity 150ms ease, color 150ms ease;
   }
   nav ul li a:hover {
     opacity: 1;
+    color: #C9A84C;
   }
   @media(max-width: 600px) {
     #menuButton {

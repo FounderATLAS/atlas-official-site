@@ -5,7 +5,7 @@ export const footerLists = [
       { title: 'Full Digital Infrastructure Audit', slug: '/services' },
       { title: 'Shadow AI Audit', slug: '/services' },
       { title: 'Remediation & Implementation', slug: '/services' },
-      { title: 'Continuous Monitoring Retainer', slug: '/services' },
+      { title: 'Continuous Monitoring', slug: '/services' },
       { title: 'Free Shadow AI Risk Scan', slug: '/company/contact' },
     ],
   },

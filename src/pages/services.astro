@@ -1,0 +1,737 @@
+---
+import { Icon } from 'astro-icon/components';
+import { Container } from '@components/odyssey-theme';
+import Layout from '../layouts/Page.astro';
+
+const seo = {
+	title: 'Services & Pricing | ATLAS',
+	description: 'ATLAS offers comprehensive digital infrastructure audits, Shadow AI assessments, remediation services, and continuous monitoring retainers for enterprise organizations.',
+};
+---
+
+<Layout {seo}>
+
+  <!-- ============================================
+       HERO
+       ============================================ -->
+  <section class="services-hero">
+    <Container>
+      <div class="services-hero__inner">
+        <p class="services-hero__eyebrow">Services & Pricing</p>
+        <h1 class="services-hero__headline">
+          Enterprise-Grade Audits.<br />Zero Data Risk.
+        </h1>
+        <p class="services-hero__sub">
+          Every engagement operates under our Trustless Architecture. We run inside 
+          your environment, deliver the findings, and self-destruct. Your data never 
+          leaves your control.
+        </p>
+      </div>
+    </Container>
+  </section>
+
+  <!-- ============================================
+       SERVICE TIERS
+       ============================================ -->
+  <section class="tiers">
+    <Container>
+      <div class="tiers__grid">
+
+        <!-- Tier 1 -->
+        <div class="tier__card tier__card--featured">
+          <div class="tier__badge">Most Popular</div>
+          <div class="tier__icon">
+            <Icon name="ic:baseline-search" width="40px" height="40px" />
+          </div>
+          <h2 class="tier__title">Full Digital Infrastructure Audit</h2>
+          <div class="tier__meta">
+            <span class="tier__time">Under 5 minutes</span>
+            <span class="tier__divider">·</span>
+            <span class="tier__price">$25,000 – $250,000</span>
+          </div>
+          <p class="tier__price-note">Based on organization size</p>
+          <div class="tier__divider-line"></div>
+          <p class="tier__description">
+            The complete audit. Every shadow tool, every wasted dollar, every 
+            security gap. Delivered as a comprehensive 40-page executive report 
+            ready to present to your board.
+          </p>
+          <ul class="tier__features">
+            <li>
+              <Icon name="ic:baseline-check-circle" width="18px" height="18px" />
+              Complete SaaS & Shadow IT inventory
+            </li>
+            <li>
+              <Icon name="ic:baseline-check-circle" width="18px" height="18px" />
+              License waste identification with exact dollar figures
+            </li>
+            <li>
+              <Icon name="ic:baseline-check-circle" width="18px" height="18px" />
+              Security vulnerability assessment
+            </li>
+            <li>
+              <Icon name="ic:baseline-check-circle" width="18px" height="18px" />
+              Shadow AI exposure mapping
+            </li>
+            <li>
+              <Icon name="ic:baseline-check-circle" width="18px" height="18px" />
+              Prioritized remediation roadmap
+            </li>
+            <li>
+              <Icon name="ic:baseline-check-circle" width="18px" height="18px" />
+              40-page board-ready executive report
+            </li>
+          </ul>
+          <a href="/company/contact" class="tier__cta tier__cta--gold">
+            Book a Discovery Call
+          </a>
+        </div>
+
+        <!-- Tier 2 -->
+        <div class="tier__card">
+          <div class="tier__icon">
+            <Icon name="ic:baseline-build" width="40px" height="40px" />
+          </div>
+          <h2 class="tier__title">Remediation & Implementation</h2>
+          <div class="tier__meta">
+            <span class="tier__time">2–5 business days</span>
+            <span class="tier__divider">·</span>
+            <span class="tier__price">Included or add-on</span>
+          </div>
+          <p class="tier__price-note">Depends on audit scope</p>
+          <div class="tier__divider-line"></div>
+          <p class="tier__description">
+            We don't just find the problems — we eliminate them. Automated 
+            cancellations, OAuth revocations, and a complete procurement 
+            policy handbook for your organization.
+          </p>
+          <ul class="tier__features">
+            <li>
+              <Icon name="ic:baseline-check-circle" width="18px" height="18px" />
+              Automated license cancellations
+            </li>
+            <li>
+              <Icon name="ic:baseline-check-circle" width="18px" height="18px" />
+              OAuth token revocations
+            </li>
+            <li>
+              <Icon name="ic:baseline-check-circle" width="18px" height="18px" />
+              Procurement policy handbook
+            </li>
+            <li>
+              <Icon name="ic:baseline-check-circle" width="18px" height="18px" />
+              Access control cleanup
+            </li>
+            <li>
+              <Icon name="ic:baseline-check-circle" width="18px" height="18px" />
+              Vendor consolidation plan
+            </li>
+          </ul>
+          <a href="/company/contact" class="tier__cta">
+            Learn More
+          </a>
+        </div>
+
+        <!-- Tier 3 -->
+        <div class="tier__card">
+          <div class="tier__icon">
+            <Icon name="ic:baseline-visibility" width="40px" height="40px" />
+          </div>
+          <h2 class="tier__title">Continuous Monitoring Retainer</h2>
+          <div class="tier__meta">
+            <span class="tier__time">Ongoing</span>
+            <span class="tier__divider">·</span>
+            <span class="tier__price">$3,000 – $15,000/mo</span>
+          </div>
+          <p class="tier__price-note">Based on organization size</p>
+          <div class="tier__divider-line"></div>
+          <p class="tier__description">
+            Shadow IT grows back. Our automated platform watches your 
+            perimeter 24/7 and alerts your CISO the moment a new rogue 
+            tool appears in your environment.
+          </p>
+          <ul class="tier__features">
+            <li>
+              <Icon name="ic:baseline-check-circle" width="18px" height="18px" />
+              24/7 automated perimeter monitoring
+            </li>
+            <li>
+              <Icon name="ic:baseline-check-circle" width="18px" height="18px" />
+              Real-time CISO alerts
+            </li>
+            <li>
+              <Icon name="ic:baseline-check-circle" width="18px" height="18px" />
+              Monthly executive summary reports
+            </li>
+            <li>
+              <Icon name="ic:baseline-check-circle" width="18px" height="18px" />
+              Quarterly compliance snapshots
+            </li>
+            <li>
+              <Icon name="ic:baseline-check-circle" width="18px" height="18px" />
+              Dedicated account manager
+            </li>
+          </ul>
+          <a href="/company/contact" class="tier__cta">
+            Learn More
+          </a>
+        </div>
+
+        <!-- Tier 4 -->
+        <div class="tier__card">
+          <div class="tier__icon">
+            <Icon name="ic:baseline-psychology" width="40px" height="40px" />
+          </div>
+          <h2 class="tier__title">Dedicated Shadow AI Audit</h2>
+          <div class="tier__meta">
+            <span class="tier__time">Under 24 hours</span>
+            <span class="tier__divider">·</span>
+            <span class="tier__price">$35,000 – $75,000</span>
+          </div>
+          <p class="tier__price-note">Fixed scope engagement</p>
+          <div class="tier__divider-line"></div>
+          <p class="tier__description">
+            Specialized legal Terms of Service analysis, GenAI adoption 
+            mapping, and NIST AI RMF compliance verification. Built for 
+            organizations navigating the new AI regulatory landscape.
+          </p>
+          <ul class="tier__features">
+            <li>
+              <Icon name="ic:baseline-check-circle" width="18px" height="18px" />
+              Legal ToS analysis of all AI tools in use
+            </li>
+            <li>
+              <Icon name="ic:baseline-check-circle" width="18px" height="18px" />
+              GenAI adoption mapping across departments
+            </li>
+            <li>
+              <Icon name="ic:baseline-check-circle" width="18px" height="18px" />
+              NIST AI RMF compliance verification
+            </li>
+            <li>
+              <Icon name="ic:baseline-check-circle" width="18px" height="18px" />
+              IP exposure risk assessment
+            </li>
+            <li>
+              <Icon name="ic:baseline-check-circle" width="18px" height="18px" />
+              AI governance policy recommendations
+            </li>
+          </ul>
+          <a href="/company/contact" class="tier__cta">
+            Learn More
+          </a>
+        </div>
+
+      </div>
+    </Container>
+  </section>
+
+  <!-- ============================================
+       GUARANTEE
+       ============================================ -->
+  <section class="guarantee">
+    <Container>
+      <div class="guarantee__inner">
+        <div class="guarantee__icon">
+          <Icon name="ic:baseline-verified" width="48px" height="48px" />
+        </div>
+        <h2 class="guarantee__headline">The Self-Funding Guarantee</h2>
+        <p class="guarantee__body">
+          All engagements are backed by our self-funding guarantee. If ATLAS does not 
+          uncover at least <strong>2× our fee</strong> in recoverable waste, you pay nothing. 
+          Zero. We keep 20% of what we find. You keep the other 80%. 
+          If we find nothing, we worked for free.
+        </p>
+        <a href="/company/contact" class="guarantee__cta">
+          Claim Your Free Risk Assessment
+        </a>
+      </div>
+    </Container>
+  </section>
+
+  <!-- ============================================
+       FAQ
+       ============================================ -->
+  <section class="faq">
+    <Container>
+      <h2 class="section-title gold-bar">Common Questions</h2>
+      <div class="faq__grid">
+        <div class="faq__item">
+          <h3>How long does an audit take?</h3>
+          <p>
+            Our Full Digital Infrastructure Audit completes in under 5 minutes. 
+            The Dedicated Shadow AI Audit delivers results within 24 hours. 
+            No weeks of waiting.
+          </p>
+        </div>
+        <div class="faq__item">
+          <h3>Do you need access to our data?</h3>
+          <p>
+            No. ATLAS operates through a Trustless Architecture. Our platform 
+            runs inside your infrastructure, analyzes locally, and self-destructs. 
+            Your data never leaves your environment.
+          </p>
+        </div>
+        <div class="faq__item">
+          <h3>What if you don't find anything?</h3>
+          <p>
+            Then you pay nothing. Our guarantee means we only get paid when 
+            we deliver measurable value. If we don't find at least 2× our fee 
+            in recoverable waste, the engagement is free.
+          </p>
+        </div>
+        <div class="faq__item">
+          <h3>What size organizations do you work with?</h3>
+          <p>
+            ATLAS serves mid-market and enterprise organizations, typically 
+            200–10,000+ employees. Our pricing scales based on organization 
+            size and complexity.
+          </p>
+        </div>
+        <div class="faq__item">
+          <h3>How is this different from SaaS management tools?</h3>
+          <p>
+            SaaS management platforms require ongoing data access and 
+            monthly subscriptions. ATLAS runs once, finds everything, 
+            delivers findings, and self-destructs. Zero ongoing data liability.
+          </p>
+        </div>
+        <div class="faq__item">
+          <h3>Can we start with a free assessment?</h3>
+          <p>
+            Yes. We offer a free Shadow AI Risk Scan that gives you an 
+            initial view of your exposure. No commitment required.
+          </p>
+        </div>
+      </div>
+    </Container>
+  </section>
+
+  <!-- ============================================
+       CTA
+       ============================================ -->
+  <section class="services-cta">
+    <Container>
+      <div class="services-cta__inner">
+        <h2>Ready to See What You're Missing?</h2>
+        <p>
+          Book a discovery call and we'll walk you through exactly how ATLAS 
+          maps your entire digital infrastructure — without touching your data.
+        </p>
+        <div class="services-cta__btns">
+          <a href="/company/contact" class="btn-gold">
+            Book a Discovery Call
+          </a>
+          <a href="/#how-it-works" class="btn-outline-navy">
+            See How It Works
+          </a>
+        </div>
+      </div>
+    </Container>
+  </section>
+
+</Layout>
+
+<style>
+
+  /* ============================================
+     HERO
+     ============================================ */
+  .services-hero {
+    background-color: #0A1628;
+    color: #ffffff;
+    padding: 6rem 1.5rem 4rem 1.5rem;
+  }
+
+  .services-hero__inner {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .services-hero__eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-size: 0.75rem;
+    color: #C9A84C;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+  }
+
+  .services-hero__headline {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.15;
+    margin-bottom: 1.5rem;
+  }
+
+  .services-hero__sub {
+    font-size: 1.05rem;
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  /* ============================================
+     TIERS
+     ============================================ */
+  .tiers {
+    padding: 5rem 1.5rem;
+    background-color: #F8F9FA;
+  }
+
+  .tiers__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .tier__card {
+    background-color: #ffffff;
+    border: 1px solid #E0E0E0;
+    border-radius: 12px;
+    padding: 2.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: box-shadow 200ms ease, transform 200ms ease;
+  }
+
+  .tier__card:hover {
+    box-shadow: 0 8px 30px rgba(10, 22, 40, 0.1);
+    transform: translateY(-4px);
+  }
+
+  .tier__card--featured {
+    border: 2px solid #C9A84C;
+    box-shadow: 0 4px 20px rgba(201, 168, 76, 0.15);
+  }
+
+  .tier__badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #C9A84C;
+    color: #0A1628;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 0.3rem 1rem;
+    border-radius: 20px;
+  }
+
+  .tier__icon {
+    color: #C9A84C;
+    margin-bottom: 1rem;
+  }
+
+  .tier__title {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #0A1628;
+    margin: 0 0 0.75rem 0;
+  }
+
+  .tier__meta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .tier__time {
+    font-size: 0.8rem;
+    color: #C9A84C;
+    font-weight: 600;
+  }
+
+  .tier__divider {
+    color: #E0E0E0;
+  }
+
+  .tier__price {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #0A1628;
+  }
+
+  .tier__price-note {
+    font-size: 0.75rem;
+    color: #6B7280;
+    margin: 0.25rem 0 0 0;
+  }
+
+  .tier__divider-line {
+    height: 1px;
+    background-color: #E0E0E0;
+    margin: 1.25rem 0;
+  }
+
+  .tier__description {
+    font-size: 0.95rem;
+    color: #0A1628;
+    opacity: 0.8;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+  }
+
+  .tier__features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    flex-grow: 1;
+  }
+
+  .tier__features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    color: #0A1628;
+    opacity: 0.8;
+  }
+
+  .tier__features li svg {
+    color: #C9A84C;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .tier__cta {
+    display: inline-block;
+    text-align: center;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: all 150ms ease;
+    border: 2px solid #0A1628;
+    color: #0A1628;
+    background-color: transparent;
+  }
+
+  .tier__cta:hover {
+    background-color: #0A1628;
+    color: #ffffff;
+  }
+
+  .tier__cta--gold {
+    background-color: #C9A84C;
+    color: #0A1628;
+    border: 2px solid #C9A84C;
+  }
+
+  .tier__cta--gold:hover {
+    background-color: #b08f3a;
+    border-color: #b08f3a;
+    color: #0A1628;
+  }
+
+  /* ============================================
+     GUARANTEE
+     ============================================ */
+  .guarantee {
+    background-color: #C9A84C;
+    padding: 4rem 1.5rem;
+  }
+
+  .guarantee__inner {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .guarantee__icon {
+    color: #0A1628;
+    margin-bottom: 1rem;
+  }
+
+  .guarantee__headline {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 800;
+    color: #0A1628;
+    margin-bottom: 1.5rem;
+  }
+
+  .guarantee__body {
+    font-size: 1.05rem;
+    color: #0A1628;
+    line-height: 1.8;
+    opacity: 0.9;
+    margin-bottom: 2rem;
+  }
+
+  .guarantee__cta {
+    background-color: #0A1628;
+    color: #ffffff;
+    padding: 0.85rem 1.75rem;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: background-color 150ms ease;
+    display: inline-block;
+  }
+
+  .guarantee__cta:hover {
+    background-color: #1a2d4a;
+  }
+
+  /* ============================================
+     FAQ
+     ============================================ */
+  .faq {
+    padding: 5rem 1.5rem;
+    background-color: #ffffff;
+  }
+
+  .faq__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+    max-width: 1000px;
+  }
+
+  .faq__item {
+    padding: 1.5rem;
+    border: 1px solid #E0E0E0;
+    border-radius: 8px;
+    transition: box-shadow 150ms ease;
+  }
+
+  .faq__item:hover {
+    box-shadow: 0 4px 16px rgba(10, 22, 40, 0.06);
+  }
+
+  .faq__item h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #0A1628;
+    margin: 0 0 0.75rem 0;
+  }
+
+  .faq__item p {
+    font-size: 0.9rem;
+    color: #0A1628;
+    opacity: 0.75;
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  /* ============================================
+     CTA
+     ============================================ */
+  .services-cta {
+    background-color: #0A1628;
+    padding: 5rem 1.5rem;
+  }
+
+  .services-cta__inner {
+    max-width: 650px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .services-cta__inner h2 {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 1rem;
+  }
+
+  .services-cta__inner p {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+  }
+
+  .services-cta__btns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  .btn-gold {
+    background-color: #C9A84C;
+    color: #0A1628;
+    padding: 0.85rem 1.75rem;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: background-color 150ms ease;
+    display: inline-block;
+  }
+
+  .btn-gold:hover {
+    background-color: #b08f3a;
+  }
+
+  .btn-outline-navy {
+    background-color: transparent;
+    color: #ffffff;
+    padding: 0.85rem 1.75rem;
+    border-radius: 6px;
+    border: 2px solid #ffffff;
+    font-weight: 700;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all 150ms ease;
+    display: inline-block;
+  }
+
+  .btn-outline-navy:hover {
+    background-color: #ffffff;
+    color: #0A1628;
+  }
+
+  /* ============================================
+     SHARED
+     ============================================ */
+  .section-title {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 800;
+    color: #0A1628;
+    margin-bottom: 0.5rem;
+  }
+
+  .gold-bar::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: #C9A84C;
+    margin-top: 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  /* ============================================
+     RESPONSIVE
+     ============================================ */
+  @media (max-width: 768px) {
+    .tiers__grid {
+      grid-template-columns: 1fr;
+    }
+
+    .faq__grid {
+      grid-template-columns: 1fr;
+    }
+
+    .services-hero {
+      padding: 4rem 1.5rem 3rem 1.5rem;
+    }
+  }
+
+</style>

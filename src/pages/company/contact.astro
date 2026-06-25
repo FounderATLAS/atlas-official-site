@@ -51,15 +51,27 @@ const seo = {
           </div>
           <div class="contact-card__body">
             <div class="calendar-embed">
-              <iframe 
-                src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3kP7t1a7Y5xNdNxMGxuXM-Qd3HN2d4pyVaY69t7?gv=true" 
-                style="border: 0" 
-                width="100%" 
-                height="600" 
-                frameborder="0"
-                loading="lazy"
-              ></iframe>
-            </div>
+  <div class="calendar-content">
+    <div class="calendar-icon">
+      <Icon name="ic:baseline-event-available" width="56px" height="56px" />
+    </div>
+    <h3>Pick a Time That Works For You</h3>
+    <p>
+      Select a 15-minute slot directly on our calendar. 
+      No email back and forth. No phone tag.
+    </p>
+    <a 
+      href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3c8S7XeNvVv7BCGliiXzEHRyD_fcVlMjxRLNycPTSVpxshZg5siQ_O3m3itxJaXi2dOFNgVV9Q?gv=true" 
+      target="_blank" 
+      rel="noreferrer"
+      class="calendar-btn"
+    >
+      <Icon name="ic:baseline-calendar-month" width="20px" height="20px" />
+      Book an Appointment
+    </a>
+    <p class="calendar-note">Opens Google Calendar in a new tab</p>
+  </div>
+</div>
           </div>
           <div class="contact-card__footer">
             <ul class="contact-card__perks">
@@ -403,18 +415,68 @@ const seo = {
   }
 
   /* ============================================
-     CALENDAR EMBED
-     ============================================ */
-  .calendar-embed {
-    width: 100%;
-    min-height: 600px;
+   CALENDAR BUTTON
+   ============================================ */
+.calendar-content {
+    text-align: center;
+    padding: 3rem 2rem;
+    background-color: #F8F9FA;
     border-radius: 8px;
-    overflow: hidden;
-  }
+    border: 2px solid #E0E0E0;
+    transition: border-color 150ms ease;
+}
 
-  .calendar-embed iframe {
-    border-radius: 8px;
-  }
+.calendar-content:hover {
+    border-color: #C9A84C;
+}
+
+.calendar-icon {
+    color: #C9A84C;
+    margin-bottom: 1.25rem;
+}
+
+.calendar-content h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #0A1628;
+    margin: 0 0 0.75rem 0;
+}
+
+.calendar-content p {
+    font-size: 0.9rem;
+    color: #6B7280;
+    line-height: 1.6;
+    margin: 0 0 1.5rem 0;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.calendar-btn {
+    background-color: #C9A84C;
+    color: #0A1628;
+    padding: 0.85rem 1.75rem;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: background-color 150ms ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.calendar-btn:hover {
+    background-color: #b08f3a;
+    color: #0A1628;
+}
+
+.calendar-note {
+    font-size: 0.7rem !important;
+    opacity: 0.5;
+    margin-top: 1rem !important;
+    margin-bottom: 0 !important;
+}
 
   /* ============================================
      FORM

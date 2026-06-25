@@ -1,126 +1,203 @@
 ---
-import { Icon } from 'astro-icon/components';
-import Container  from '../core/Container.astro';
-import Plug from './Plug.astro';
-
-const { footerSocials, footerLists, copyrightName, background, color, showPlug: showPlug = true } =
-  Astro.props;
+const { footerLists, footerSocials } = Astro.props;
 ---
 
-<footer
-  style={background && `--footer-bg:${background}; --footer-color:${color}`}
->
-  <Container>
-    <div class="footer-grid__container">
-      <div class="footer-brand__container">
-        <div>
-          <slot name="logo" />
-        </div>
-        <ul class="footer-socials__list">
-          {
-            footerSocials.map((social) => (
-              <li class="footer-socials__item">
-                <a
-                  href={social.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="footer-socials__link"
-                  title={`Open ${social.name} profile`}
-                >
-                  <Icon name={social.icon} width={24} height={24} />
-                </a>
-              </li>
-            ))
-          }
-        </ul>
-      </div>
-      {
-        footerLists.map((list) => (
-          <div>
-            <p><strong>{list.title}</strong></p>
-            <ul class="footer-link__list">
-              {list.items.map((item) => (
-                <li>
-                  <a href={item.slug}>{item.title}</a>
-                </li>
-              ))}
-            </ul>
+<footer>
+  <div class="footer__inner">
+    <div class="footer__grid">
+
+      <!-- Column 1: Brand -->
+      <div class="footer__brand">
+        <slot name="logo" />
+        <p class="footer__company-name">
+          Asset & Technology Landscape<br />Audit Solutions LLC
+        </p>
+        <p class="footer__address">
+          Bethesda, Maryland<br />
+          Washington D.C. Metro Area
+        </p>
+        <p class="footer__contact">
+          <a href="mailto:founder@atlas-solutions.com">founder@atlas-solutions.com</a>
+        </p>
+        {footerSocials && footerSocials.length > 0 && (
+          <div class="footer__socials">
+            {footerSocials.map(social => (
+              <a href={social.url} target="_blank" rel="noreferrer" title={social.title}>
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                </svg>
+              </a>
+            ))}
           </div>
-        ))
-      }
-    </div>
-    <div class="footer-copyright__container">
-      {showPlug && <Plug/>}
-      <p>Copyright &copy; {new Date().getFullYear()} {copyrightName}</p>
+        )}
+      </div>
+
+      <!-- Link Columns -->
+      {footerLists && footerLists.map(list => (
+        <div class="footer__column">
+          <h4 class="footer__column-title">{list.title}</h4>
+          <ul>
+            {list.items.map(item => (
+              <li>
+                <a href={item.slug}>{item.title}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
     </div>
 
-  </Container>
+    <!-- Divider -->
+    <div class="footer__divider"></div>
+
+    <!-- Bottom Bar -->
+    <div class="footer__bottom">
+      <p class="footer__copyright">
+        Copyright © 2026 Asset & Technology Landscape Audit Solutions LLC. All rights reserved.
+      </p>
+    </div>
+
+    <!-- Zero Data Statement -->
+    <div class="footer__zero-data">
+      <p>
+        ATLAS operates under a strict Zero Data Liability Architecture. 
+        We never store, transmit, or retain client data. Ever.
+      </p>
+    </div>
+  </div>
 </footer>
 
 <style>
   footer {
-    --footer-bg: var(--theme-primary);
-    --footer-color: var(--theme-on-primary);
-    min-height: 40vh;
-    background-color: var(--footer-bg);
-    color: var(--footer-color);
-    border-top-left-radius: var(--theme-shape-radius);
-    border-top-right-radius: var(--theme-shape-radius);
+    background-color: #0A1628;
+    color: rgba(255, 255, 255, 0.85);
+    padding: 4rem 1.5rem 2rem 1.5rem;
   }
-  .footer-grid__container {
-    padding: 10vh 0 1rem 0;
+
+  .footer__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .footer__grid {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 3rem;
   }
-  .footer-socials__list {
-    margin: 1rem 0;
-    padding: 0;
-    display: flex;
-    list-style: none;
-  }
-  .footer-socials__item {
-    margin-right: 0.5rem;
-  }
-  .footer-link__list {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-  .footer-link__list li {
-    margin-bottom: 0.5rem;
-  }
-  .footer-link__list li a {
-    text-decoration: none;
-  }
-  .footer-link__list li a:hover {
-    opacity: 0.84;
-  }
-  .footer-copyright__container {
+
+  /* Brand Column */
+  .footer__brand {
     display: flex;
     flex-direction: column;
-    /* justify-content: space-between; */
+    gap: 0.75rem;
   }
-  .footer-copyright__container p {
-    font-size: var(--font-size-sm);
+
+  .footer__company-name {
+    font-size: 0.85rem;
+    opacity: 0.7;
+    margin: 0;
+    line-height: 1.5;
   }
+
+  .footer__address {
+    font-size: 0.85rem;
+    opacity: 0.6;
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  .footer__contact a {
+    color: #C9A84C;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: opacity 150ms ease;
+  }
+
+  .footer__contact a:hover {
+    opacity: 0.8;
+  }
+
+  .footer__socials {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 0.25rem;
+  }
+
+  .footer__socials a {
+    color: rgba(255, 255, 255, 0.6);
+    transition: color 150ms ease;
+  }
+
+  .footer__socials a:hover {
+    color: #C9A84C;
+  }
+
+  /* Link Columns */
+  .footer__column h4 {
+    color: #ffffff;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin: 0 0 1rem 0;
+    font-weight: 600;
+  }
+
+  .footer__column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .footer__column ul li a {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color 150ms ease;
+  }
+
+  .footer__column ul li a:hover {
+    color: #C9A84C;
+  }
+
+  /* Divider */
+  .footer__divider {
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.1);
+    margin: 3rem 0 1.5rem 0;
+  }
+
+  /* Bottom */
+  .footer__bottom {
+    text-align: center;
+  }
+
+  .footer__copyright {
+    font-size: 0.75rem;
+    opacity: 0.4;
+    margin: 0;
+  }
+
+  /* Zero Data Statement */
+  .footer__zero-data {
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  .footer__zero-data p {
+    font-size: 0.7rem;
+    opacity: 0.35;
+    margin: 0;
+    font-style: italic;
+  }
+
+  /* Mobile */
   @media (max-width: 768px) {
-    .footer-grid__container :first-child {
-      grid-column: 1/-1;
-    }
-    .footer-grid__container {
-      padding: 5vh 0;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1rem;
-    }
-  }
-  @media (max-width: 600px) {
-    .footer-grid__container {
-      padding: 5vh 0;
+    .footer__grid {
       grid-template-columns: 1fr;
-      gap: 1rem;
-    }
-    .footer-copyright__container {
-      flex-direction: column;
+      gap: 2rem;
     }
   }
 </style>

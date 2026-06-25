@@ -16,7 +16,7 @@ export const footerLists = [
       { title: 'How It Works', slug: '/#how-it-works' },
       { title: 'Industries We Serve', slug: '/#industries' },
       { title: 'Contact', slug: '/company/contact' },
-      { title: 'Book a Discovery Call', slug: 'https://calendly.com/YOUR-LINK' },
+      { title: 'Book a Discovery Call', slug: 'https://calendar.app.google/HUXK8UKWGUNCNXHt5' },
     ],
   },
   {

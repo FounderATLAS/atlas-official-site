@@ -6,9 +6,8 @@ import Logo from '../components/Logo.astro';
 import settings from '../config/settings';
 import { footerLists, footerSocials } from '../config/footer';
 
-
 export interface Props {
-	seo?: BaseHeadProps;
+  seo?: BaseHeadProps;
 }
 
 import { nav } from '../config/nav.js';
@@ -17,24 +16,110 @@ const { seo } = Astro.props as Props;
 ---
 
 <Layout seo={seo}>
-	<Header rightMenu navData={nav} slot="header">
-		<span slot="logo">
-			<Logo />
-		</span>
-		<Button slot="action-item" href="/theme/get-started">Get Started</Button>
-	</Header>
-	<div id="page">
-		<slot />
-	</div>
-	<Footer
-		slot="footer"
-		background="var(--theme-surface-1)"
-		color="var(--theme-on-surface-1)"
-		footerLists={footerLists}
+  <!-- Announcement Bar -->
+  <div class="announcement-bar" slot="announcement-bar">
+    <p>
+      Now accepting Q3 2026 beta partners in the Maryland / Washington D.C. corridor — Limited availability
+      <a href="/company/contact">Apply →</a>
+    </p>
+  </div>
+
+  <Header navData={nav} slot="header">
+    <span slot="logo">
+      <Logo />
+    </span>
+    <a
+      slot="action-item"
+      href="https://calendar.app.google/HUXK8UKWGUNCNXHt5"
+      class="header-cta"
+    >
+      Book a Discovery Call
+    </a>
+  </Header>
+
+  <!-- Spacer for fixed header -->
+  <div class="header-spacer"></div>
+
+  <div id="page">
+    <slot />
+  </div>
+
+  <Footer
+    slot="footer"
+    footerLists={footerLists}
     footerSocials={footerSocials}
-		copyrightName={settings.name}
-    showPlug={settings.showPlug}
-	>
-		<Logo slot="logo" />
-	</Footer>
+  >
+    <Logo slot="logo" />
+  </Footer>
 </Layout>
+
+<style>
+  /* Announcement Bar */
+  .announcement-bar {
+    background-color: #0A1628;
+    border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+    text-align: center;
+    padding: 0.5rem 1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1001;
+  }
+
+  .announcement-bar p {
+    margin: 0;
+    font-size: 0.75rem;
+    color: #C9A84C;
+    letter-spacing: 0.03em;
+  }
+
+  .announcement-bar a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    margin-left: 0.5rem;
+    transition: opacity 150ms ease;
+  }
+
+  .announcement-bar a:hover {
+    opacity: 0.8;
+  }
+
+  /* Push header below announcement bar */
+  :global(#atlasNavHeader) {
+    top: 32px !important;
+  }
+
+  /* Spacer for fixed header + announcement bar */
+  .header-spacer {
+    height: 100px;
+  }
+
+  /* CTA Button */
+  .header-cta {
+    background-color: #C9A84C;
+    color: #0A1628;
+    padding: 0.5rem 1.25rem;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-decoration: none;
+    transition: background-color 150ms ease;
+    white-space: nowrap;
+  }
+
+  .header-cta:hover {
+    background-color: #b08f3a;
+  }
+
+  @media (max-width: 768px) {
+    .announcement-bar p {
+      font-size: 0.65rem;
+    }
+
+    .header-spacer {
+      height: 90px;
+    }
+  }
+</style>

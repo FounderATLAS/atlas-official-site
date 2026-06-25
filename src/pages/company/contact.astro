@@ -1,65 +1,617 @@
 ---
-import ContactForm from '../../components/forms/ContactForm.astro';
-import Layout from '../../layouts/Page.astro';
+import { Icon } from 'astro-icon/components';
 import { Container } from '@components/odyssey-theme';
+import Layout from '../../layouts/Page.astro';
 
 const seo = {
-	title: 'Contact | Astro Odyssey Theme',
-	description: 'Contact Page',
+	title: 'Contact | ATLAS',
+	description: 'Book a discovery call or request a free Shadow AI Risk Scan. No sales pressure. No obligation.',
 };
 ---
 
-<Layout seo={seo}>
-	<Container>
-		<section class="contact-hero__section">
-			<div class="contact-hero__text-section">
-				<h1>Contact Us</h1>
-				<p>
-					This is a contact form using Odyssey's form components to create a
-					contact form component. The contact form is setup to use Netlify's
-					form detection; however, it can easily be translated to other popular
-					form services such as Formspree, Getform, Formspark, etc.
-				</p>
-				<div>
-					<p>
-						<em><a href="tel:8008675309">(800) 867-5309</a></em> • <em
-							><a href="mailto:hello@odysseytheme.com">hello@ourcompany.com</a
-							></em
-						>
-					</p>
-				</div>
-			</div>
-			<div class="col-2__container">
-				<ContactForm />
-			</div>
-		</section>
-	</Container>
+<Layout {seo}>
+
+  <!-- ============================================
+       HERO
+       ============================================ -->
+  <section class="contact-hero">
+    <Container>
+      <div class="contact-hero__inner">
+        <p class="contact-hero__eyebrow">Get Started</p>
+        <h1 class="contact-hero__headline">
+          Let's find out what's hiding in your infrastructure.
+        </h1>
+        <p class="contact-hero__sub">
+          Choose the option that works best for you. Both are free, 
+          no obligation, and completely confidential.
+        </p>
+      </div>
+    </Container>
+  </section>
+
+  <!-- ============================================
+       TWO OPTIONS
+       ============================================ -->
+  <section class="contact-options">
+    <Container>
+      <div class="contact-options__grid">
+
+        <!-- Option A — Book a Call -->
+        <div class="contact-card">
+          <div class="contact-card__header">
+            <div class="contact-card__icon">
+              <Icon name="ic:baseline-calendar-month" width="36px" height="36px" />
+            </div>
+            <h2>Book a 15-Minute Discovery Call</h2>
+            <p class="contact-card__subtitle">
+              Pick a time that works for you. No back and forth. 
+              No email chains. Just a focused conversation about 
+              your infrastructure.
+            </p>
+          </div>
+          <div class="contact-card__body">
+            <div class="calendar-embed">
+              <iframe 
+                src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3kP7t1a7Y5xNdNxMGxuXM-Qd3HN2d4pyVaY69t7?gv=true" 
+                style="border: 0" 
+                width="100%" 
+                height="600" 
+                frameborder="0"
+                loading="lazy"
+              ></iframe>
+            </div>
+          </div>
+          <div class="contact-card__footer">
+            <ul class="contact-card__perks">
+              <li>
+                <Icon name="ic:baseline-check-circle" width="16px" height="16px" />
+                15 minutes, focused and efficient
+              </li>
+              <li>
+                <Icon name="ic:baseline-check-circle" width="16px" height="16px" />
+                No preparation needed on your end
+              </li>
+              <li>
+                <Icon name="ic:baseline-check-circle" width="16px" height="16px" />
+                We'll assess fit before asking for anything
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Option B — Risk Scan Form -->
+        <div class="contact-card">
+          <div class="contact-card__header">
+            <div class="contact-card__icon">
+              <Icon name="ic:baseline-shield" width="36px" height="36px" />
+            </div>
+            <h2>Request a Free Shadow AI Risk Scan</h2>
+            <p class="contact-card__subtitle">
+              Tell us about your organization and we'll send you a 
+              preliminary risk assessment — no call required.
+            </p>
+          </div>
+          <div class="contact-card__body">
+            <form class="risk-scan-form" id="riskScanForm">
+              <div class="form-group">
+                <label for="name">Full Name</label>
+                <input 
+                  type="text" 
+                  id="name" 
+                  name="name" 
+                  placeholder="John Smith"
+                  required 
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="company">Company Name</label>
+                <input 
+                  type="text" 
+                  id="company" 
+                  name="company" 
+                  placeholder="Acme Corporation"
+                  required 
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="email">Work Email</label>
+                <input 
+                  type="email" 
+                  id="email" 
+                  name="email" 
+                  placeholder="john@acmecorp.com"
+                  required 
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="size">Company Size</label>
+                <select id="size" name="size" required>
+                  <option value="" disabled selected>Select company size</option>
+                  <option value="50-199">50 – 199 employees</option>
+                  <option value="200-499">200 – 499 employees</option>
+                  <option value="500-999">500 – 999 employees</option>
+                  <option value="1000-4999">1,000 – 4,999 employees</option>
+                  <option value="5000+">5,000+ employees</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="concern">Primary Concern</label>
+                <select id="concern" name="concern" required>
+                  <option value="" disabled selected>Select primary concern</option>
+                  <option value="financial-waste">Financial Waste & License Optimization</option>
+                  <option value="security-risk">Security Risk & Shadow IT</option>
+                  <option value="ai-compliance">AI Compliance & Shadow AI</option>
+                  <option value="all-three">All Three</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Additional Context <span class="form-optional">(optional)</span></label>
+                <textarea 
+                  id="message" 
+                  name="message" 
+                  rows="3" 
+                  placeholder="Tell us anything else that would help us understand your situation..."
+                ></textarea>
+              </div>
+
+              <button type="submit" class="form-submit">
+                Request Free Risk Scan
+              </button>
+            </form>
+          </div>
+          <div class="contact-card__footer">
+            <ul class="contact-card__perks">
+              <li>
+                <Icon name="ic:baseline-check-circle" width="16px" height="16px" />
+                No call required
+              </li>
+              <li>
+                <Icon name="ic:baseline-check-circle" width="16px" height="16px" />
+                Preliminary assessment within 48 hours
+              </li>
+              <li>
+                <Icon name="ic:baseline-check-circle" width="16px" height="16px" />
+                100% confidential
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </Container>
+  </section>
+
+  <!-- ============================================
+       TRUST NOTE
+       ============================================ -->
+  <section class="trust-note">
+    <Container>
+      <div class="trust-note__inner">
+        <Icon name="ic:baseline-verified-user" width="32px" height="32px" />
+        <p>
+          No sales pressure. No obligation. If we don't see an immediate opportunity 
+          to recover more than 3× our assessment fee in your infrastructure, we'll 
+          tell you so on the first call.
+        </p>
+      </div>
+    </Container>
+  </section>
+
+  <!-- ============================================
+       ALTERNATIVE CONTACT
+       ============================================ -->
+  <section class="alt-contact">
+    <Container>
+      <div class="alt-contact__inner">
+        <h2>Prefer Email?</h2>
+        <p>
+          Reach us directly at 
+          <a href="mailto:founder@atlas-solutions.com">founder@atlas-solutions.com</a>
+        </p>
+        <p class="alt-contact__response">
+          We respond to every inquiry within one business day.
+        </p>
+      </div>
+    </Container>
+  </section>
+
 </Layout>
 
+<script type="module">
+  const form = document.getElementById('riskScanForm');
+  
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    const submitBtn = form.querySelector('.form-submit');
+    const originalText = submitBtn.textContent;
+    
+    // Get form data
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData);
+    
+    // Disable button and show loading
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending...';
+    
+    try {
+      // Send to your email endpoint
+      // Replace this URL with your actual form handler
+      // Options: Formspree, Netlify Forms, or your own API
+      const response = await fetch('https://formspree.io/f/xbdvganv', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        // Show success
+        form.innerHTML = `
+          <div class="form-success">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="#C9A84C">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+            </svg>
+            <h3>Thank you!</h3>
+            <p>We've received your request. Our team will review your information and send you a preliminary risk assessment within 48 hours.</p>
+          </div>
+        `;
+      } else {
+        throw new Error('Form submission failed');
+      }
+    } catch (error) {
+      // Show error
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalText;
+      alert('Something went wrong. Please try again or email us at founder@atlas-solutions.com');
+    }
+  });
+</script>
+
 <style>
-	.contact-hero__section {
-		margin: var(--section-margin) auto;
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		min-height: calc(90vh - var(--navbar-height));
-		gap: 3rem;
-	}
-	.contact-hero__text-section {
-		padding: 2rem;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		background-color: var(--theme-surface-1);
-		border-radius: var(--theme-shape-radius);
-	}
-	.col-2__container {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-	}
-	@media (max-width: 768px) {
-		.contact-hero__section {
-			grid-template-columns: 1fr;
-		}
-	}
+
+  /* ============================================
+     HERO
+     ============================================ */
+  .contact-hero {
+    background-color: #0A1628;
+    color: #ffffff;
+    padding: 6rem 1.5rem 4rem 1.5rem;
+  }
+
+  .contact-hero__inner {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .contact-hero__eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-size: 0.75rem;
+    color: #C9A84C;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+  }
+
+  .contact-hero__headline {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.15;
+    margin-bottom: 1.5rem;
+  }
+
+  .contact-hero__sub {
+    font-size: 1.05rem;
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  /* ============================================
+     CONTACT OPTIONS GRID
+     ============================================ */
+  .contact-options {
+    padding: 4rem 1.5rem;
+    background-color: #F8F9FA;
+  }
+
+  .contact-options__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    align-items: start;
+  }
+
+  /* ============================================
+     CONTACT CARDS
+     ============================================ */
+  .contact-card {
+    background-color: #ffffff;
+    border: 1px solid #E0E0E0;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contact-card__header {
+    padding: 2rem 2rem 1.5rem 2rem;
+    border-bottom: 1px solid #F0F0F0;
+  }
+
+  .contact-card__icon {
+    color: #C9A84C;
+    margin-bottom: 1rem;
+  }
+
+  .contact-card__header h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #0A1628;
+    margin: 0 0 0.75rem 0;
+  }
+
+  .contact-card__subtitle {
+    font-size: 0.9rem;
+    color: #6B7280;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .contact-card__body {
+    padding: 2rem;
+    flex-grow: 1;
+  }
+
+  .contact-card__footer {
+    padding: 1.5rem 2rem;
+    background-color: #FAFAFA;
+    border-top: 1px solid #F0F0F0;
+  }
+
+  .contact-card__perks {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .contact-card__perks li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    color: #6B7280;
+  }
+
+  .contact-card__perks li svg {
+    color: #C9A84C;
+    flex-shrink: 0;
+  }
+
+  /* ============================================
+     CALENDAR EMBED
+     ============================================ */
+  .calendar-embed {
+    width: 100%;
+    min-height: 600px;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .calendar-embed iframe {
+    border-radius: 8px;
+  }
+
+  /* ============================================
+     FORM
+     ============================================ */
+  .risk-scan-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .form-group label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #0A1628;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .form-optional {
+    text-transform: none;
+    font-weight: 400;
+    opacity: 0.5;
+    letter-spacing: 0;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 0.75rem 1rem;
+    border: 1px solid #E0E0E0;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    color: #0A1628;
+    background-color: #ffffff;
+    transition: border-color 150ms ease, box-shadow 150ms ease;
+    font-family: inherit;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: #C9A84C;
+    box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.15);
+  }
+
+  .form-group input::placeholder,
+  .form-group textarea::placeholder {
+    color: #ABABAB;
+  }
+
+  .form-group select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%236B7280' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    padding-right: 2.5rem;
+    cursor: pointer;
+  }
+
+  .form-group textarea {
+    resize: vertical;
+    min-height: 80px;
+  }
+
+  .form-submit {
+    background-color: #C9A84C;
+    color: #0A1628;
+    padding: 0.85rem 1.75rem;
+    border: none;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 150ms ease;
+    margin-top: 0.5rem;
+    font-family: inherit;
+  }
+
+  .form-submit:hover {
+    background-color: #b08f3a;
+  }
+
+  .form-submit:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  /* Form Success State */
+  .form-success {
+    text-align: center;
+    padding: 2rem 0;
+  }
+
+  .form-success h3 {
+    color: #0A1628;
+    font-size: 1.5rem;
+    margin: 1rem 0 0.75rem 0;
+  }
+
+  .form-success p {
+    color: #6B7280;
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  /* ============================================
+     TRUST NOTE
+     ============================================ */
+  .trust-note {
+    padding: 3rem 1.5rem;
+    background-color: #ffffff;
+  }
+
+  .trust-note__inner {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .trust-note__inner svg {
+    color: #C9A84C;
+  }
+
+  .trust-note__inner p {
+    font-size: 0.9rem;
+    color: #6B7280;
+    line-height: 1.7;
+    margin: 0;
+    font-style: italic;
+  }
+
+  /* ============================================
+     ALT CONTACT
+     ============================================ */
+  .alt-contact {
+    padding: 3rem 1.5rem 5rem 1.5rem;
+    background-color: #ffffff;
+  }
+
+  .alt-contact__inner {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .alt-contact__inner h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #0A1628;
+    margin-bottom: 0.75rem;
+  }
+
+  .alt-contact__inner a {
+    color: #C9A84C;
+    font-weight: 600;
+    text-decoration: none;
+    transition: opacity 150ms ease;
+  }
+
+  .alt-contact__inner a:hover {
+    opacity: 0.8;
+  }
+
+  .alt-contact__response {
+    font-size: 0.8rem;
+    color: #6B7280;
+    margin-top: 0.5rem;
+  }
+
+  /* ============================================
+     RESPONSIVE
+     ============================================ */
+  @media (max-width: 768px) {
+    .contact-options__grid {
+      grid-template-columns: 1fr;
+    }
+
+    .contact-hero {
+      padding: 4rem 1.5rem 3rem 1.5rem;
+    }
+
+    .calendar-embed {
+      min-height: 500px;
+    }
+  }
+
 </style>

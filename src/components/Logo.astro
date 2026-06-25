@@ -1,18 +1,37 @@
 ---
 ---
 
-<p class="atlas-logo">ATLAS</p>
+<div class="atlas-logo">
+  <img src="/assets/images/atlas-v14-circle-polish-2.png" alt="ATLAS" />
+  <span class="atlas-logo__text">ATLAS</span>
+</div>
 
 <style>
-	.atlas-logo {
-		width: fit-content;
-		margin: 0;
-		font-family: var(--theme-font-family-serif);
+  .atlas-logo {
+    width: fit-content;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .atlas-logo img {
+    height: 44px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+  }
+
+  .atlas-logo__text {
+    font-family: var(--theme-font-family-serif);
     font-size: var(--font-size-md);
-		color: inherit;
-	}
-	.atlas-logo:hover {
-		text-decoration: underline;
-		cursor: pointer;
-	}
+    font-weight: 700;
+    color: inherit;
+    line-height: 1;
+  }
+
+  .atlas-logo:hover {
+    cursor: pointer;
+    opacity: 0.9;
+  }
 </style>

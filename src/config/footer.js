@@ -1,80 +1,39 @@
+export const footerLists = [
+  {
+    title: 'Services',
+    items: [
+      { title: 'Full Digital Infrastructure Audit', slug: '/services' },
+      { title: 'Shadow AI Audit', slug: '/services' },
+      { title: 'Remediation & Implementation', slug: '/services' },
+      { title: 'Continuous Monitoring Retainer', slug: '/services' },
+      { title: 'Free Shadow AI Risk Scan', slug: '/company/contact' },
+    ],
+  },
+  {
+    title: 'Company',
+    items: [
+      { title: 'About', slug: '/company/about' },
+      { title: 'How It Works', slug: '/#how-it-works' },
+      { title: 'Industries We Serve', slug: '/#industries' },
+      { title: 'Contact', slug: '/company/contact' },
+      { title: 'Book a Discovery Call', slug: 'https://calendly.com/YOUR-LINK' },
+    ],
+  },
+  {
+    title: 'Legal',
+    items: [
+      { title: 'Privacy Policy', slug: '/company/legal' },
+      { title: 'Terms of Service', slug: '/company/legal' },
+      { title: 'HIPAA Compliance Statement', slug: '/company/legal' },
+      { title: 'Zero Data Liability Policy', slug: '/company/legal' },
+    ],
+  },
+];
+
 export const footerSocials = [
   {
-    name: 'Twitter',
-    url: 'https://twitter.com/jaydanurwin',
-    icon: "mdi:twitter",
+    title: 'LinkedIn',
+    url: 'https://www.linkedin.com/company/atlas-solutions',
+    icon: 'mdi:linkedin',
   },
-  {
-    name: 'Youtube',
-    url: 'https://youtube.com/@jaydanurwin',
-    icon: "mdi:youtube",
-  },
-  {
-    name: 'Github',
-    url: 'https://github.com/jaydanurwin',
-    icon: "mdi:github",
-  },
-  {
-    name: 'Discord',
-    url: 'https://astro.build/chat',
-    icon: "ic:baseline-discord",
-  },
-]
-
-export const footerLists = [
-	{
-		title: 'Landing Pages',
-		items: [
-			{
-				title: 'Landing Page 1',
-				slug: '/landing-pages/landing-1',
-			},
-			{
-				title: 'Landing Page 2',
-				slug: '/landing-pages/landing-2',
-			},
-      // {
-			// 	title: 'Landing Page 3',
-			// 	slug: '/landing-pages/landing-3',
-			// },
-		],
-	},
-	{
-		title: 'Company',
-		items: [
-			{
-				title: 'About',
-				slug: '/company/about',
-			},
-			{
-				title: 'Blog',
-				slug: '/blog',
-			},
-			{
-				title: 'Contact',
-				slug: '/company/contact',
-			},
-		],
-	},
-	{
-		title: 'Theme',
-		items: [
-			{
-				title: 'Get Started',
-				slug: '/theme/get-started',
-			},
-			{
-				title: 'Style Guide',
-				slug: '/theme/style-guide',
-			},
-      {
-        title: 'Theme Setup',
-        slug: '/theme/theme-setup',
-      },
-      {
-        title: 'Customizing Odyssey',
-        slug: '/theme/customizing-odyssey',
-      }
-		],
-	},
 ];

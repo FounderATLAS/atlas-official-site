@@ -1,36 +1,91 @@
 /* ============================================
    ATLAS THEME - Official Odyssey Override
+   Single source of truth for brand variables
    ============================================ */
 
 :root {
-  /* OVERRIDE 100% OF ODYSSEY COLORS */
+  /* ---- Brand Colors ---- */
   --theme-bg: #FFFFFF;
   --theme-on-bg: #0A1628;
 
-  --theme-primary: #0A1628;
-  --theme-on-primary: #FFFFFF;
+  --theme-primary: #0A1628;        /* ATLAS Navy */
+  --theme-on-primary: #FFFFFF;      /* White text on navy */
 
-  --theme-accent: #C9A84C;
-  --theme-on-accent: #0A1628;
+  --theme-accent: #C9A84C;         /* ATLAS Gold */
+  --theme-on-accent: #0A1628;      /* Navy text on gold */
 
-  --theme-surface-1: #F8F9FA;
+  --theme-surface-1: #F8F9FA;     /* Light gray for cards */
   --theme-on-surface-1: #0A1628;
-  --theme-surface-2: #F1F3F5;
+
+  --theme-surface-2: #F1F3F5;     /* Slightly darker surface */
   --theme-on-surface-2: #0A1628;
+
+  /* ---- Supporting Colors ---- */
+  --color-primary-light: #1a2d4a; /* Lighter navy for hover states */
+  --color-accent-light: #d4b965;  /* Lighter gold for hover states */
+  --color-accent-dark: #b08f3a;   /* Darker gold for active states */
+  --color-gray-light: #F5F5F5;    /* Light gray for backgrounds */
+  --color-gray-medium: #E0E0E0;   /* Medium gray for borders */
+  --color-gray-dark: #6B7280;     /* Dark gray for muted text */
+  --color-error: #DC2626;         /* Red for errors */
+  --color-success: #16A34A;       /* Green for success states */
 
   --theme-shadow: rgba(10, 22, 40, 0.08);
 
-  /* Optional fine tuning */
-  --theme-shape-radius: 6px;
+  /* ---- Theme Shapes ---- */
+  --theme-shape-radius: 6px;      /* Slightly rounded corners (enterprise feel) */
+  --theme-button-border-radius: 3rem; /* Pill-shaped buttons */
+
+  /* ---- Theme Transitions ---- */
+  --theme-transition: 0.2s ease-in-out;
+
+  /* ---- Theme Layout ---- */
+  --section-margin: 4rem;         /* Increased spacing for premium feel (was 3rem) */
+  --theme-grid-gap: 1.5rem;       /* Wider gaps between grid items (was 1rem) */
+  --container-max-width: 1280px;  /* Narrower max width for improved readability (was 1440px) */
+  --container-max-width-narrow: 960px;
+
+  --theme-blog-post-header-width: 1200px;
 }
 
-/* Disable dark mode completely */
+/* Disable dark mode completely — ATLAS uses brand colors always */
+[data-theme='dark'],
 :root.theme-dark {
-  /* Force your brand colors always, no dark mode switch */
   --theme-bg: #FFFFFF;
   --theme-on-bg: #0A1628;
+  --theme-primary: #0A1628;
+  --theme-on-primary: #FFFFFF;
+  --theme-accent: #C9A84C;
+  --theme-on-accent: #0A1628;
   --theme-surface-1: #F8F9FA;
   --theme-on-surface-1: #0A1628;
   --theme-surface-2: #F1F3F5;
   --theme-on-surface-2: #0A1628;
 }
+
+/* ============================================
+   SCROLL FADE-IN ANIMATIONS (Phase 5)
+   ============================================ */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.6s ease-out,
+    transform 0.6s ease-out;
+}
+
+.fade-in--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered variants for grids */
+.fade-in-stagger > * {
+  transition-delay: calc(var(--index, 0) * 100ms);
+}
+
+.fade-in-stagger > *:nth-child(2) { --index: 1; }
+.fade-in-stagger > *:nth-child(3) { --index: 2; }
+.fade-in-stagger > *:nth-child(4) { --index: 3; }
+.fade-in-stagger > *:nth-child(5) { --index: 4; }
+.fade-in-stagger > *:nth-child(6) { --index: 5; }

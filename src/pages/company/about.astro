@@ -1,47 +1,254 @@
 ---
-import { TextSection } from '@components/odyssey-theme';
+import { TextSection, CustomerQuoteSection } from '@components/odyssey-theme';
 import Layout from '../../layouts/Page.astro';
-import HeroSection from '../../components/sections/heros/HeroSection.astro';
 
 const seo = {
-	title: 'About | Astro Odyssey Theme',
-	description: 'About Page',
+	title: 'About ATLAS | Enterprise Cybersecurity Auditing',
+	description: 'ATLAS provides autonomous, zero-risk digital infrastructure audits for enterprise organizations. Learn about our mission and team.',
 };
 ---
 
 <Layout {seo}>
-	<HeroSection>
-		<div slot="text-container">
-			<h1>About Odyssey</h1>
-			<p>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, nisi
-				recusandae? Quidem dignissimos nobis, dicta unde, aperiam voluptate
-				autem iste reprehenderit, aliquam ducimus illo ea ipsum qui animi sequi.
-				Numquam.
+
+	<!-- ============================================
+	     HERO SECTION
+	     ============================================ -->
+	<section class="about-hero">
+		<div class="about-hero__inner">
+			<h1>About ATLAS</h1>
+			<p class="about-hero__sub">
+				We audit everything. We store nothing. ATLAS was founded to solve a fundamental problem in enterprise security: organizations cannot protect what they don't know exists.
 			</p>
 		</div>
-    <picture slot="image-container">
-      <img
-        src="/assets/images/home/classic-hero.jpg"
-        alt="Astro Odyssee"
-        id="home-hero-image"
-      />
-    </picture>
-	</HeroSection>
-  <TextSection narrow>
-    <p>
-      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo asperiores alias illo accusamus voluptatem ea cum nemo odit! Consequatur quidem quo iusto quam ea neque nisi dolorum quod, recusandae id!
-      Repudiandae, fugit labore voluptatum beatae modi omnis adipisci corrupti aut aliquid cumque inventore iure possimus doloremque iste incidunt nulla architecto. Nobis iusto sunt voluptatem necessitatibus laborum, earum doloremque fugit rerum!
-    </p>
-    <p>Fugit asperiores harum consectetur sapiente deleniti. Optio enim tenetur impedit reprehenderit labore, illo eius in, consequatur odio dolore iste assumenda explicabo, nisi similique qui obcaecati possimus delectus reiciendis quod modi.</p>
-    
-    <p>
-      Vel tempore rem omnis esse officiis optio, explicabo, quod deleniti adipisci ullam cum necessitatibus eius minus vero saepe ad, dicta rerum praesentium deserunt illo itaque odio corrupti voluptatum quibusdam. Pariatur.
-      Porro neque tempore, illum eligendi deleniti iure dolorem amet magnam at dolores veniam nemo cumque aut alias repellat est dicta sit repellendus facilis officia? Minima dolorum quo ducimus adipisci perferendis.
-    </p>
-    <p>
-      Quis distinctio tempora sequi sit repudiandae cumque nostrum deserunt, voluptatibus rem eum fuga modi beatae cum ullam delectus dicta atque eius nam quos corporis. Animi praesentium quae nobis. Odit, mollitia. Voluptatum, hic explicabo. Ex accusamus ipsa ea dolor commodi quas esse ipsum alias et adipisci error necessitatibus atque facere rerum ratione consequatur aspernatur repudiandae minima consectetur fuga, doloremque dolorum pariatur.
-      Ipsam error eaque velit possimus porro eum quod illo iusto officia magnam magni, beatae nisi voluptate praesentium? Saepe distinctio adipisci quas hic quae facilis? Sequi eum hic aperiam impedit minus?
-    </p>
-  </TextSection>
+	</section>
+
+	<!-- ============================================
+	     MISSION SECTION
+	     ============================================ -->
+	<TextSection narrow>
+		<h2>Our Mission</h2>
+		<p>
+			Every day, enterprises accumulate unauthorized software, forgotten subscriptions, and shadow AI exposures that create financial waste and security vulnerabilities. ATLAS exists to find these hidden liabilities — autonomously, securely, and without ever touching your data.
+		</p>
+		<p>
+			Our platform operates through a 100% Trustless Architecture: we run inside your infrastructure, analyze your environment locally, deliver findings immediately, and self-destruct. It is physically and mathematically impossible for your organization to suffer a data breach through ATLAS.
+		</p>
+
+		<h2>The Problem We Solve</h2>
+		<ul class="about-list">
+			<li><strong>$34B+ annually</strong> in SaaS licensing waste across US enterprises</li>
+			<li><strong>975 average</strong> unknown cloud services per mid-market organization</li>
+			<li><strong>80% of employees</strong> using unapproved AI tools without IT oversight</li>
+			<li><strong>$180,000 annually</strong> wasted on unused software in a 300-person company</li>
+			<li><strong>31% of former employees</strong> still have active access to your systems right now</li>
+		</ul>
+
+		<h2>Why Trustless Architecture?</h2>
+		<p>
+			Traditional auditors require you to hand over your data. This creates a paradox: to find security gaps, you must trust another organization with the very data that makes you vulnerable. ATLAS eliminates this trust requirement entirely. Our platform runs in your environment, uses your own AI keys routed through your enterprise MSA, and destroys all audit environments immediately after delivery.
+		</p>
+	</TextSection>
+
+	<!-- ============================================
+	     TEAM SECTION
+	     ============================================ -->
+	<TextSection>
+		<h2 class="section-title gold-bar">Our Team</h2>
+		<p class="about-intro">
+			ATLAS is built by former enterprise security architects, cloud infrastructure specialists, and privacy engineers who have spent decades solving this exact problem for Fortune 500 organizations. We've seen the $180,000 annual SaaS waste in mid-market companies. We've mapped the shadow AI exposures that leak proprietary IP daily. And we know it doesn't have to be this way.
+		</p>
+		<div class="team-grid">
+			<div class="team-card">
+				<h3>Security Architecture</h3>
+				<p>Deep expertise in enterprise identity, access control, and zero-trust frameworks.</p>
+			</div>
+			<div class="team-card">
+				<h3>Cloud Infrastructure</h3>
+				<p>Built systems at scale across AWS, Azure, and GCP for Fortune 500 clients.</p>
+			</div>
+			<div class="team-card">
+				<h3>Privacy Engineering</h3>
+				<p>Specialists in data minimization, privacy-by-design, and regulatory compliance.</p>
+			</div>
+		</div>
+	</TextSection>
+
+	<!-- ============================================
+	     INDUSTRIES SECTION
+	     ============================================ -->
+	<TextSection narrow>
+		<h2 class="section-title gold-bar">Industries We Serve</h2>
+		<div class="industries-grid">
+			<div class="industry-card">
+				<h3>Healthcare & Life Sciences</h3>
+				<p>HIPAA-compliant auditing with zero patient data exposure. We surface PHI leaks in shadow AI tools and unauthorized SaaS integrations.</p>
+			</div>
+			<div class="industry-card">
+				<h3>Financial Services</h3>
+				<p>SOC 2, PCI-DSS aligned audits for banks and fintech. Protect client funds and proprietary trading algorithms from shadow IT exposure.</p>
+			</div>
+			<div class="industry-card">
+				<h3>Manufacturing & Industrial</h3>
+				<p>OT/IT convergence security for connected factories. Detect unauthorized tools touching operational technology networks.</p>
+			</div>
+			<div class="industry-card">
+				<h3>Education</h3>
+				<p>FERPA-compliant audits for universities and K-12 districts. Protect student records and research IP from shadow AI adoption.</p>
+			</div>
+		</div>
+	</TextSection>
+
+	<!-- ============================================
+	     TESTIMONIAL SECTION
+	     ============================================ -->
+	<CustomerQuoteSection
+		quoteText="ATLAS found $2.4M in recoverable waste we didn't know existed — in under five minutes, with zero risk to our production environment."
+		customerName="Chief Technology Officer, Fortune 500 Company"
+	/>
+
 </Layout>
+
+<style>
+	/* ============================================
+	   HERO SECTION
+	   ============================================ */
+	.about-hero {
+		background-color: var(--theme-primary);
+		color: #ffffff;
+		padding: 6rem 1.5rem;
+	}
+
+	.about-hero__inner {
+		max-width: 800px;
+		margin: 0 auto;
+		text-align: center;
+	}
+
+	.about-hero h1 {
+		font-size: clamp(2.5rem, 6vw, 4rem);
+		font-weight: 800;
+		color: #ffffff;
+		line-height: 1.15;
+		margin-bottom: 1.5rem;
+	}
+
+	.about-hero__sub {
+		font-size: clamp(1.1rem, 2vw, 1.3rem);
+		color: rgba(255, 255, 255, 0.85);
+		line-height: 1.7;
+		margin: 0;
+	}
+
+	/* ============================================
+	   LIST STYLING
+	   ============================================ */
+	.about-list {
+		padding-left: 2rem;
+		line-height: 1.8;
+		font-size: 1.05rem;
+	}
+
+	.about-list li {
+		margin-bottom: 0.75rem;
+	}
+
+	/* ============================================
+	   TEAM SECTION
+	   ============================================ */
+	.about-intro {
+		font-size: 1.05rem;
+		line-height: 1.8;
+		color: var(--theme-on-bg);
+		opacity: 0.85;
+		margin-bottom: 3rem;
+	}
+
+	.team-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+		gap: 2rem;
+	}
+
+	.team-card {
+		background-color: var(--theme-surface-1);
+		padding: 2rem;
+		border-radius: var(--theme-shape-radius);
+	}
+
+	.team-card h3 {
+		font-size: 1.25rem;
+		margin-bottom: 0.75rem;
+		color: var(--theme-primary);
+	}
+
+	.team-card p {
+		font-size: 0.95rem;
+		line-height: 1.6;
+		opacity: 0.85;
+		margin: 0;
+	}
+
+	/* ============================================
+	   INDUSTRIES GRID
+	   ============================================ */
+	.industries-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+		gap: 2rem;
+		margin-top: 3rem;
+	}
+
+	.industry-card {
+		background-color: var(--theme-surface-1);
+		padding: 2rem;
+		border-radius: var(--theme-shape-radius);
+		transition: box-shadow 150ms ease, transform 150ms ease;
+	}
+
+	.industry-card:hover {
+		box-shadow: 0 4px 20px rgba(10, 22, 40, 0.08);
+		transform: translateY(-3px);
+	}
+
+	.industry-card h3 {
+		font-size: 1.25rem;
+		margin-bottom: 0.75rem;
+		color: var(--theme-primary);
+	}
+
+	.industry-card p {
+		font-size: 0.95rem;
+		line-height: 1.6;
+		opacity: 0.85;
+		margin: 0;
+	}
+
+	/* ============================================
+	   SHARED UTILITIES
+	   ============================================ */
+	.section-title {
+		font-size: clamp(1.75rem, 4vw, 2.5rem);
+		font-weight: 800;
+		color: var(--theme-primary);
+		margin-bottom: 0.5rem;
+	}
+
+	.gold-bar::after {
+		content: '';
+		display: block;
+		width: 60px;
+		height: 4px;
+		background-color: var(--theme-accent);
+		margin-top: 0.75rem;
+		margin-bottom: 1rem;
+	}
+
+	/* ============================================
+	   RESPONSIVE
+	   ============================================ */
+	@media (max-width: 768px) {
+		.about-hero {
+			padding: 4rem 1.5rem;
+		}
+	}
+</style>

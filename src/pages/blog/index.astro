@@ -1,56 +1,110 @@
 ---
-import { parse, isBefore } from 'date-fns';
-import {
-	Container,
-	TextCardSection,
-	BlogPostsList,
-} from '@components/odyssey-theme';
-import Layout from '../../layouts/Page.astro';
-import NewsletterForm from '../../components/forms/NewsletterForm.astro';
-
-const posts = await Astro.glob('./posts/*.mdx').then(posts =>
-	posts
-		.map(({ frontmatter, url }) => ({
-			title: frontmatter.title,
-			description: frontmatter.description,
-			authors: frontmatter.authors,
-			publishDate: parse(frontmatter.publishDate, 'MMMM d, yyyy', new Date()),
-			featuredImage: frontmatter.featuredImage,
-			excerpt: frontmatter.excerpt,
-			href: url,
-		}))
-		.sort((a, b) => {
-			if (isBefore(a.publishDate, b.publishDate)) return 1;
-			if (isBefore(b.publishDate, a.publishDate)) return -1;
-			return 0;
-		})
-);
+import Layout from '../layouts/Page.astro';
 
 const seo = {
-	title: 'Blog | ATLAS',
-	description: 'ATLAS Blog - Stay up to date with our latest news and insights.',
+	title: 'Blog | ATLAS Solutions',
+	description: 'Insights on enterprise cybersecurity, SaaS governance, and shadow AI risks.',
 };
 ---
 
 <Layout {seo}>
-	<Container>
-		<TextCardSection>
-			<h1>ATLAS Blog</h1>
-			<p>
-				View our blog to stay up to date on the latest news about ATLAS.
-				Want to be the first to hear about a new blog post? Join our newsletter!
+	<section class="blog-empty">
+		<div class="blog-empty__inner">
+			<h1>The ATLAS Blog</h1>
+			<p class="blog-empty__subtitle">
+				Enterprise security insights, audit methodologies, and industry analysis are coming soon. Subscribe to our newsletter for early access.
 			</p>
-			<NewsletterForm />
-		</TextCardSection>
-		<section class="blog-posts-list__section">
-			<h2>Recent Posts</h2>
-			<BlogPostsList posts={posts} />
-		</section>
-	</Container>
+
+			<!-- Optional: Email signup form -->
+			<form class="blog-empty__subscribe" action="/api/subscribe" method="POST">
+				<input type="email" placeholder="Enter your email" required aria-label="Email address" />
+				<button type="submit">Notify Me</button>
+			</form>
+		</div>
+	</section>
 </Layout>
 
 <style>
-	.blog-posts-list__section {
-		margin: var(--section-margin) auto;
+	.blog-empty {
+		text-align: center;
+		padding: 6rem 1.5rem;
+		background-color: var(--theme-surface-1);
+	}
+
+	.blog-empty__inner {
+		max-width: 600px;
+		margin: 0 auto;
+	}
+
+	.blog-empty h1 {
+		font-size: clamp(2rem, 5vw, 3rem);
+		font-weight: 800;
+		color: var(--theme-primary);
+		margin-bottom: 1.5rem;
+		line-height: 1.2;
+	}
+
+	.blog-empty__subtitle {
+		font-size: 1.25rem;
+		color: var(--color-gray-dark);
+		margin-bottom: 3rem;
+		line-height: 1.6;
+	}
+
+	.blog-empty__subscribe {
+		display: flex;
+		gap: 1rem;
+		justify-content: center;
+		max-width: 500px;
+		margin: 0 auto;
+		flex-wrap: wrap;
+	}
+
+	.blog-empty__subscribe input {
+		flex: 1;
+		min-width: 250px;
+		padding: 0.75rem 1rem;
+		border: 2px solid var(--color-gray-medium);
+		border-radius: 6px;
+		font-size: 1rem;
+		outline: none;
+		transition: border-color 150ms ease;
+	}
+
+	.blog-empty__subscribe input:focus {
+		border-color: var(--theme-accent);
+	}
+
+	.blog-empty__subscribe button {
+		padding: 0.75rem 2rem;
+		background-color: var(--theme-primary);
+		color: #ffffff;
+		border: none;
+		border-radius: 6px;
+		font-weight: 600;
+		font-size: 1rem;
+		cursor: pointer;
+		transition: background-color 150ms ease;
+	}
+
+	.blog-empty__subscribe button:hover {
+		background-color: var(--color-primary-light);
+	}
+
+	/* ============================================
+	   RESPONSIVE
+	   ============================================ */
+	@media (max-width: 768px) {
+		.blog-empty {
+			padding: 4rem 1.5rem;
+		}
+
+		.blog-empty__subscribe {
+			flex-direction: column;
+		}
+
+		.blog-empty__subscribe input {
+			min-width: auto;
+		}
 	}
 </style>

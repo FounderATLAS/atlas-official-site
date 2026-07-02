@@ -3,48 +3,157 @@ import { TextSection } from '@components/odyssey-theme';
 import Layout from '../../layouts/Page.astro';
 
 const seo = {
-  title: `Legal Page | Astro Odyssey Theme`,
-  description: `This is the legal page template. It is a great starter for your company's Terms of Service, Terms & Conditions, Privacy Policy, etc.`,
+	title: 'Legal & Compliance | ATLAS Solutions',
+	description: 'Privacy Policy, Terms of Service, and Compliance Statements for ATLAS cybersecurity auditing platform.',
 };
 ---
 
-<Layout seo={seo}>
-  <TextSection narrow>
-    <h1>Legal Page</h1>
+<Layout {seo}>
+	<TextSection narrow>
+		<h1>Legal & Compliance</h1>
+		<p class="legal-draft-notice">
+			<strong>Draft Notice:</strong> These documents are provided as reference drafts and should be reviewed by qualified legal counsel before publication. Last updated: July 2026.
+		</p>
 
-    <p>This is the legal page template. It is a great starter for your company's Terms of Service, Terms & Conditions,
-      Privacy Policy, etc.</p>
+		<!-- ============================================
+		     PRIVACY POLICY
+		     ============================================ -->
+		<h2>Privacy Policy</h2>
 
-    <h2>Terms of Service</h2>
+		<h3>Information We Collect</h3>
+		<p>
+			ATLAS operates under a zero-retention model. During an audit engagement, our platform may temporarily access:
+		</p>
+		<ul class="legal-list">
+			<li>SaaS application metadata (names, usage counts, license assignments)</li>
+			<li>Cloud service inventory (AWS, Azure, GCP service accounts and roles)</li>
+			<li>AI tool usage patterns (tool names, frequency of use — not content)</li>
+		</ul>
+		<p>
+			<strong>We do NOT collect, store, or transmit:</strong> employee PII, source code, financial records, customer data, passwords, API keys, or any proprietary business information.
+		</p>
 
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, obcaecati. Aspernatur facilis molestias
-      vitae. Aliquid debitis eum quis repudiandae pariatur possimus provident accusantium reiciendis nemo, culpa labore
-      laborum, dolorum ea.</p>
+		<h3>Data Retention</h3>
+		<p>
+			All audit data is processed in ephemeral containers that self-destruct upon engagement completion. No raw data is retained on ATLAS servers, third-party cloud storage, or backup systems. Audit reports are delivered to you and may be stored at your discretion.
+		</p>
 
-    <p>Corrupti impedit perferendis, libero in, voluptates quod ratione repudiandae veniam sapiente necessitatibus, eius
-      illo. Impedit quibusdam esse saepe placeat incidunt voluptatibus soluta dolore blanditiis ad provident animi
-      illum, est adipisci?</p>
+		<h3>Data Processing Agreement</h3>
+		<p>
+			By engaging ATLAS services, you authorize us to process the limited metadata described above solely for the purpose of delivering audit findings. We act as a data processor under GDPR and do not determine the purposes or means of processing.
+		</p>
 
-    <p>Ratione optio necessitatibus numquam dignissimos sunt molestiae ipsum fugiat quae maxime veniam aspernatur eius
-      quidem vel reprehenderit sequi, molestias perspiciatis, illo architecto perferendis nobis, in dolore! Nam
-      asperiores eaque totam.</p>
+		<!-- ============================================
+		     TERMS OF SERVICE
+		     ============================================ -->
+		<h2>Terms of Service</h2>
 
-    <p>Repudiandae, labore alias. Voluptatem quia itaque sequi, aperiam, reprehenderit ipsum libero quae adipisci
-      possimus eum esse corrupti sapiente harum dignissimos eligendi cum iure tempora magnam nemo, sunt provident vero.
-      Voluptatibus.</p>
+		<h3>Engagement Model</h3>
+		<p>
+			ATLAS provides autonomous auditing services under a results-based pricing model. All engagements are backed by our Self-Funding Guarantee: if ATLAS does not uncover at least 3× our fee in recoverable waste, you pay nothing.
+		</p>
 
-    <h2>Privacy Policy</h2>
+		<h3>Limited Liability</h3>
+		<p>
+			While ATLAS employs enterprise-grade security measures, no automated system can guarantee absolute safety. By using our platform, you acknowledge that:
+		</p>
+		<ul class="legal-list">
+			<li>Audit findings represent the best available intelligence at time of scan</li>
+			<li>New vulnerabilities may emerge after audit completion</li>
+			<li>ATLAS is not liable for third-party service outages or data breaches unrelated to our platform</li>
+			<li>Liability is limited to the total fees paid by you during the 12 months preceding the claim</li>
+		</ul>
 
-    <p>
-      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus eveniet quibusdam ipsa, veniam adipisci rerum
-      temporibus inventore! Sit quas vero laboriosam tempora alias! Fugit, saepe earum quod modi harum qui.
-      Expedita, pariatur consequuntur! Modi, maiores. Quaerat voluptatibus nostrum non harum rerum dolorem totam qui
-      repellendus, itaque dignissimos eveniet consequuntur ducimus! Non commodi magnam nemo, pariatur facilis
-      repellendus sunt fuga ipsa.
-    </p>
+		<h3>Intellectual Property</h3>
+		<p>
+			All audit reports, methodologies, and proprietary algorithms remain the intellectual property of ATLAS. You receive a perpetual, non-exclusive license to use audit findings for internal decision-making purposes only. Redistribution or resale of our methodology is prohibited.
+		</p>
 
-    <p>Consequuntur similique ab ea tenetur, quo aperiam molestias sed facilis minus eaque eveniet libero quis
-      accusantium deleniti tempore? Qui vel reiciendis voluptates corporis eum repellat maiores fugit, eveniet sapiente
-      ad.</p>
-  </TextSection>
+		<h3>Payment Terms</h3>
+		<p>
+			Invoices are due net 30 days from receipt. Late payments accrue interest at 1.5% per month or the maximum rate permitted by law, whichever is lower. ATLAS reserves the right to suspend services for overdue accounts.
+		</p>
+
+		<!-- ============================================
+		     HIPAA COMPLIANCE STATEMENT
+		     ============================================ -->
+		<h2>HIPAA Compliance Statement</h2>
+		<p>
+			ATLAS audits are designed to be HIPAA-aware but do not constitute a covered entity or business associate relationship under the Health Insurance Portability and Accountability Act. Our platform does not process, store, or transmit protected health information (PHI). Healthcare organizations should consult their compliance officers regarding specific regulatory requirements.
+		</p>
+
+		<!-- ============================================
+		     ZERO DATA LIABILITY POLICY
+		     ============================================ -->
+		<h2>Zero Data Liability Policy</h2>
+		<p>
+			ATLAS maintains a strict zero-data-liability posture:
+		</p>
+		<ul class="legal-list">
+			<li>No raw audit data is retained beyond engagement completion</li>
+			<li>No customer data is used for training, analytics, or third-party sharing</li>
+			<li>All processing occurs within ephemeral, self-destructing containers</li>
+			<li>Third-party cloud providers (AWS, Azure) are engaged under strict DPA terms that prohibit secondary use of customer data</li>
+			<li>This policy is legally binding and enforceable. Violations result in immediate contract termination and potential liability for damages.</li>
+		</ul>
+
+		<!-- ============================================
+		     CONTACT US
+		     ============================================ -->
+		<h2>Contact Us</h2>
+		<p>For legal inquiries, data processing requests, or compliance questions:</p>
+		<ul class="legal-list">
+			<li><strong>Email:</strong> legal@atlas-solutions.com</li>
+			<li><strong>Mail:</strong> ATLAS Solutions, 1234 Security Blvd, Suite 500, Austin, TX 78701</li>
+			<li><strong>Response time:</strong> We respond to all legal inquiries within 2 business days</li>
+		</ul>
+	</TextSection>
 </Layout>
+
+<style>
+	h2 {
+		margin-top: 3rem;
+		font-size: 1.75rem;
+	}
+
+	h3 {
+		margin-top: 2rem;
+		font-size: 1.25rem;
+	}
+
+	/* ============================================
+	   LEGAL-SPECIFIC STYLING
+	   ============================================ */
+	.legal-draft-notice {
+		background-color: var(--theme-surface-1);
+		padding: 1.5rem;
+		border-radius: var(--theme-shape-radius);
+		margin-bottom: 2rem;
+		font-size: 0.95rem;
+		line-height: 1.6;
+	}
+
+	.legal-list {
+		padding-left: 2rem;
+		line-height: 1.8;
+		font-size: 0.95rem;
+		margin-bottom: 1.5rem;
+	}
+
+	.legal-list li {
+		margin-bottom: 0.75rem;
+	}
+
+	/* ============================================
+	   RESPONSIVE
+	   ============================================ */
+	@media (max-width: 768px) {
+		h2 {
+			font-size: 1.5rem;
+		}
+
+		h3 {
+			font-size: 1.1rem;
+		}
+	}
+</style>

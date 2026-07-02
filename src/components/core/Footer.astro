@@ -53,14 +53,17 @@ const { footerLists, footerSocials } = Astro.props;
     <!-- Bottom Bar -->
     <div class="footer__bottom">
       <p class="footer__copyright">
-        Copyright © 2026 Asset & Technology Landscape Audit Solutions LLC. All rights reserved.
+        Copyright © <span id="currentYear">2026</span> Asset & Technology Landscape Audit Solutions LLC. All rights reserved.
       </p>
+      <script is:inline>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+      </script>
     </div>
 
     <!-- Zero Data Statement -->
     <div class="footer__zero-data">
       <p>
-        ATLAS operates under a strict Zero Data Liability Architecture. 
+        ATLAS operates under a strict Zero Data Liability Architecture.
         We never store, transmit, or retain client data. Ever.
       </p>
     </div>
@@ -69,7 +72,7 @@ const { footerLists, footerSocials } = Astro.props;
 
 <style>
   footer {
-    background-color: #0A1628;
+    background-color: var(--theme-primary, #0A1628);
     color: rgba(255, 255, 255, 0.85);
     padding: 4rem 1.5rem 2rem 1.5rem;
   }
@@ -188,7 +191,7 @@ const { footerLists, footerSocials } = Astro.props;
 
   .footer__zero-data p {
     font-size: 0.7rem;
-    opacity: 0.35;
+    opacity: 0.6;
     margin: 0;
     font-style: italic;
   }

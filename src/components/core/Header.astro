@@ -10,7 +10,6 @@ const { navData, rightMenu } = Astro.props;
   const menuButtonIconHam = document.querySelector('#menuButtonIconHam');
   const menuButtonIconClose = document.querySelector('#menuButtonIconClose');
   let scrollPosition = 0;
-  let lastScroll = 0;
 
   // Sticky header shrink on scroll
   window.addEventListener('scroll', () => {
@@ -25,10 +24,14 @@ const { navData, rightMenu } = Astro.props;
   menuButton.addEventListener('click', toggleMenu);
 
   function toggleMenu() {
+    const isOpen = navHeader.hasAttribute('mobile-menu-open');
+
     menuButtonIconHam.toggleAttribute('hidden');
     menuButtonIconClose.toggleAttribute('hidden');
-    
-    if (navHeader.hasAttribute('mobile-menu-open', true)) {
+
+    if (isOpen) {
+      // Close menu
+      menuButton.setAttribute('aria-expanded', 'false');
       menuButton.title = "Open Main Menu";
       bodyElement.style.removeProperty('overflow');
       bodyElement.style.removeProperty('position');
@@ -36,6 +39,8 @@ const { navData, rightMenu } = Astro.props;
       bodyElement.style.removeProperty('width');
       window.scrollTo(0, scrollPosition);
     } else {
+      // Open menu
+      menuButton.setAttribute('aria-expanded', 'true');
       menuButton.title = "Close Main Menu";
       scrollPosition = window.pageYOffset;
       bodyElement.style.overflow = 'hidden';
@@ -43,7 +48,7 @@ const { navData, rightMenu } = Astro.props;
       bodyElement.style.top = `-${scrollPosition}px`;
       bodyElement.style.width = '100%';
     }
-    
+
     navHeader.toggleAttribute('mobile-menu-open');
   }
 </script>
@@ -52,7 +57,7 @@ const { navData, rightMenu } = Astro.props;
   <div class="header__inner">
     <!-- Logo -->
     <div class="header-logo-menu__container">
-      <button id="menuButton" title="Open Main Menu">
+      <button id="menuButton" title="Open Main Menu" aria-expanded="false" aria-label="Open/close navigation">
         <span id="menuButtonIconHam">
           <Icon name="ic:baseline-menu" width="24px" height="24px" />
         </span>
@@ -95,7 +100,7 @@ const { navData, rightMenu } = Astro.props;
     background-color: rgba(10, 22, 40, 0.95);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(201, 168, 76, 0.15);
+    border-bottom: 1px solid var(--theme-accent-glass, rgba(201, 168, 76, 0.15));
     transition: all 300ms ease;
     padding: 1rem 0;
   }
@@ -138,6 +143,18 @@ const { navData, rightMenu } = Astro.props;
     display: none;
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
+    padding: 0.25rem;
+    border-radius: 4px;
+    transition: background-color 150ms ease;
+  }
+
+  #menuButton:focus-visible {
+    outline: 2px solid var(--theme-accent, #C9A84C);
+    outline-offset: 2px;
+  }
+
+  #menuButton:hover {
+    background-color: rgba(255, 255, 255, 0.05);
   }
 
   #menuButton > span {
@@ -147,7 +164,7 @@ const { navData, rightMenu } = Astro.props;
   }
 
   #menuButton:hover > span {
-    color: #C9A84C;
+    color: var(--theme-accent, #C9A84C);
   }
 
   nav {

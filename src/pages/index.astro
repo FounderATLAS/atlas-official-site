@@ -7,6 +7,13 @@ const seo = {
 	title: 'ATLAS | Asset & Technology Landscape Audit Solutions',
 	description: 'ATLAS autonomously discovers every unauthorized tool, forgotten subscription, and shadow AI exposure inside your organization — in under 15 minutes, without touching a single byte of your data.',
 };
+
+// Initialize animated counters on the client side
+import { initAnimatedCounters } from '@components/core/AnimatedCounter';
+
+if (typeof window !== 'undefined') {
+  document.addEventListener('DOMContentLoaded', initAnimatedCounters);
+}
 ---
 
 <Layout {seo}>
@@ -41,19 +48,19 @@ const seo = {
   <!-- ============================================
        SECTION 2 — THE NUMBERS
        ============================================ -->
-  <section class="stats">
+  <section class="stats fade-in">
     <Container>
       <div class="stats__grid">
         <div class="stats__card">
-          <p class="stats__number">$34B+</p>
+          <p class="stats__number" data-counter="34000000000" data-suffix="B+" data-decimals="0">$0</p>
           <p class="stats__label">Annual SaaS licensing waste across US enterprises</p>
         </div>
         <div class="stats__card">
-          <p class="stats__number">975</p>
+          <p class="stats__number" data-counter="975" data-suffix="">$0</p>
           <p class="stats__label">Average unknown cloud services per mid-market organization</p>
         </div>
         <div class="stats__card">
-          <p class="stats__number">80%</p>
+          <p class="stats__number" data-counter="80" data-suffix="%">$0</p>
           <p class="stats__label">Employees using unapproved AI tools without IT oversight</p>
         </div>
       </div>
@@ -66,7 +73,7 @@ const seo = {
   <!-- ============================================
        SECTION 3 — THE CORE PROBLEM
        ============================================ -->
-  <section class="problem">
+  <section class="problem fade-in">
     <Container>
       <h2 class="section-title gold-bar">The Hidden Cost of What You Don't Know</h2>
       <div class="problem__grid">
@@ -76,8 +83,8 @@ const seo = {
           </div>
           <h3>Financial Bleeding</h3>
           <p>
-            Unused licenses. Duplicate tools. Forgotten subscriptions auto-renewing 
-            on corporate cards nobody audits. The average 300-person company wastes 
+            Unused licenses. Duplicate tools. Forgotten subscriptions auto-renewing
+            on corporate cards nobody audits. The average 300-person company wastes
             <strong>$180,000 annually</strong> on software nobody uses.
           </p>
         </div>
@@ -87,8 +94,8 @@ const seo = {
           </div>
           <h3>Security Exposure</h3>
           <p>
-            Every unapproved SaaS tool is an unlogged gateway into your network. 
-            <strong>31% of former employees</strong> still have active access to 
+            Every unapproved SaaS tool is an unlogged gateway into your network.
+            <strong>31% of former employees</strong> still have active access to
             your systems right now.
           </p>
         </div>
@@ -98,8 +105,8 @@ const seo = {
           </div>
           <h3>Shadow AI & IP Leakage</h3>
           <p>
-            Your staff is pasting proprietary source code, unreleased financials, 
-            and client data into consumer AI tools every day. Most enterprise 
+            Your staff is pasting proprietary source code, unreleased financials,
+            and client data into consumer AI tools every day. Most enterprise
             security stacks <strong>cannot see it happening.</strong>
           </p>
         </div>
@@ -110,7 +117,7 @@ const seo = {
   <!-- ============================================
        SECTION 4 — THE ATLAS DIFFERENCE
        ============================================ -->
-  <section class="difference">
+  <section class="difference fade-in">
     <Container>
       <div class="difference__inner">
         <h2 class="difference__headline">We audit everything. We store nothing.</h2>
@@ -142,7 +149,7 @@ const seo = {
   <!-- ============================================
        SECTION 5 — HOW IT WORKS
        ============================================ -->
-  <section class="how-it-works" id="how-it-works">
+  <section class="how-it-works fade-in" id="how-it-works">
     <Container>
       <h2 class="section-title gold-bar">How It Works</h2>
       <p class="section-subtitle">Three steps. Under five minutes. Zero risk.</p>
@@ -151,8 +158,8 @@ const seo = {
           <div class="steps__number">01</div>
           <h3>Connect</h3>
           <p>
-            You authenticate read-only API access to your financial systems 
-            and identity provider. Nothing is uploaded. Nothing leaves 
+            You authenticate read-only API access to your financial systems
+            and identity provider. Nothing is uploaded. Nothing leaves
             your environment.
           </p>
         </div>
@@ -160,8 +167,8 @@ const seo = {
           <div class="steps__number">02</div>
           <h3>Scan</h3>
           <p>
-            ATLAS autonomously maps your entire digital infrastructure — 
-            every tool, every license, every user, every AI endpoint — 
+            ATLAS autonomously maps your entire digital infrastructure —
+            every tool, every license, every user, every AI endpoint —
             in under 15 minutes.
           </p>
         </div>
@@ -169,8 +176,8 @@ const seo = {
           <div class="steps__number">03</div>
           <h3>Recover</h3>
           <p>
-            You receive a comprehensive 40-page executive report with exact 
-            dollar figures, risk severity ratings, and a prioritized 
+            You receive a comprehensive 40-page executive report with exact
+            dollar figures, risk severity ratings, and a prioritized
             remediation roadmap. Ready to present to your board.
           </p>
         </div>
@@ -181,7 +188,7 @@ const seo = {
   <!-- ============================================
        SECTION 6 — THE GUARANTEE
        ============================================ -->
-  <section class="guarantee">
+  <section class="guarantee fade-in">
     <Container>
       <div class="guarantee__inner">
         <h2 class="guarantee__headline">Our Guarantee</h2>
@@ -200,7 +207,7 @@ const seo = {
   <!-- ============================================
        SECTION 7 — WHO WE SERVE
        ============================================ -->
-  <section class="industries">
+  <section class="industries fade-in">
     <Container>
       <h2 class="section-title gold-bar">Who We Serve</h2>
       <div class="industries__grid">
@@ -210,8 +217,8 @@ const seo = {
           </div>
           <h3>Healthcare & BioTech</h3>
           <p>
-            HIPAA compliance, PHI exposure detection, and clinical 
-            Shadow AI auditing for organizations where data breaches 
+            HIPAA compliance, PHI exposure detection, and clinical
+            Shadow AI auditing for organizations where data breaches
             carry legal and human consequences.
           </p>
         </div>
@@ -221,8 +228,8 @@ const seo = {
           </div>
           <h3>FinTech & Regional Banking</h3>
           <p>
-            SOC2, SOX, and PCI-DSS compliance readiness. We surface 
-            every unauthorized tool touching your financial data 
+            SOC2, SOX, and PCI-DSS compliance readiness. We surface
+            every unauthorized tool touching your financial data
             before regulators do.
           </p>
         </div>
@@ -232,8 +239,8 @@ const seo = {
           </div>
           <h3>High-Growth Tech & Professional Services</h3>
           <p>
-            IP protection, developer shadow pipelines, and proprietary 
-            code exposure. Protect your most valuable asset — 
+            IP protection, developer shadow pipelines, and proprietary
+            code exposure. Protect your most valuable asset —
             what you've built.
           </p>
         </div>

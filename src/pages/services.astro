@@ -14,7 +14,7 @@ const seo = {
   <!-- ============================================
        HERO
        ============================================ -->
-  <section class="services-hero">
+  <section class="services-hero fade-in">
     <Container>
       <div class="services-hero__inner">
         <p class="services-hero__eyebrow">Services & Pricing</p>
@@ -33,7 +33,7 @@ const seo = {
   <!-- ============================================
        SERVICE TIERS
        ============================================ -->
-  <section class="tiers">
+  <section class="tiers fade-in">
     <Container>
       <div class="tiers__grid">
 
@@ -229,7 +229,7 @@ const seo = {
   <!-- ============================================
        GUARANTEE
        ============================================ -->
-  <section class="guarantee">
+  <section class="guarantee fade-in">
     <Container>
       <div class="guarantee__inner">
         <div class="guarantee__icon">
@@ -252,7 +252,7 @@ const seo = {
   <!-- ============================================
        FAQ
        ============================================ -->
-  <section class="faq">
+  <section class="faq fade-in">
     <Container>
       <h2 class="section-title gold-bar">Common Questions</h2>
       <div class="faq__grid">
@@ -310,7 +310,7 @@ const seo = {
   <!-- ============================================
        CTA
        ============================================ -->
-  <section class="services-cta">
+  <section class="services-cta fade-in">
     <Container>
       <div class="services-cta__inner">
         <h2>Ready to See What You're Missing?</h2>
@@ -338,7 +338,7 @@ const seo = {
      HERO
      ============================================ */
   .services-hero {
-    background-color: #0A1628;
+    background-color: var(--theme-primary);
     color: #ffffff;
     padding: 6rem 1.5rem 4rem 1.5rem;
   }
@@ -353,7 +353,7 @@ const seo = {
     text-transform: uppercase;
     letter-spacing: 0.15em;
     font-size: 0.75rem;
-    color: #C9A84C;
+    color: var(--theme-accent);
     margin-bottom: 1.5rem;
     font-weight: 600;
   }
@@ -377,36 +377,56 @@ const seo = {
      TIERS
      ============================================ */
   .tiers {
-    padding: 5rem 1.5rem;
-    background-color: #F8F9FA;
+    padding: var(--section-margin) 1.5rem;
+    background-color: var(--theme-surface-1);
   }
 
   .tiers__grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-    max-width: 1100px;
+    gap: var(--theme-grid-gap);
+    max-width: var(--container-max-width);
     margin: 0 auto;
+  }
+
+  /* Tablet: 769px - 1024px */
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .tiers__grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      max-width: 900px;
+    }
+  }
+
+  /* Mobile: ≤768px */
+  @media (max-width: 768px) {
+    .tiers__grid {
+      grid-template-columns: 1fr;
+    }
+
+    .tier__card {
+      padding: 2rem 1.5rem;
+    }
   }
 
   .tier__card {
     background-color: #ffffff;
-    border: 1px solid #E0E0E0;
+    border: 1px solid var(--color-gray-medium);
     border-radius: 12px;
     padding: 2.5rem 2rem;
     display: flex;
     flex-direction: column;
     position: relative;
-    transition: box-shadow 200ms ease, transform 200ms ease;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
   }
 
   .tier__card:hover {
-    box-shadow: 0 8px 30px rgba(10, 22, 40, 0.1);
+    box-shadow: 0 8px 30px var(--theme-shadow);
     transform: translateY(-4px);
   }
 
   .tier__card--featured {
-    border: 2px solid #C9A84C;
+    border-color: var(--theme-accent);
     box-shadow: 0 4px 20px rgba(201, 168, 76, 0.15);
   }
 
@@ -415,8 +435,8 @@ const seo = {
     top: -12px;
     left: 50%;
     transform: translateX(-50%);
-    background-color: #C9A84C;
-    color: #0A1628;
+    background-color: var(--theme-accent);
+    color: var(--theme-primary);
     font-size: 0.7rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -426,14 +446,14 @@ const seo = {
   }
 
   .tier__icon {
-    color: #C9A84C;
+    color: var(--theme-accent);
     margin-bottom: 1rem;
   }
 
   .tier__title {
     font-size: 1.35rem;
     font-weight: 700;
-    color: #0A1628;
+    color: var(--theme-primary);
     margin: 0 0 0.75rem 0;
   }
 
@@ -446,35 +466,35 @@ const seo = {
 
   .tier__time {
     font-size: 0.8rem;
-    color: #C9A84C;
+    color: var(--theme-accent);
     font-weight: 600;
   }
 
   .tier__divider {
-    color: #E0E0E0;
+    color: var(--color-gray-medium);
   }
 
   .tier__price {
     font-size: 0.9rem;
     font-weight: 700;
-    color: #0A1628;
+    color: var(--theme-primary);
   }
 
   .tier__price-note {
     font-size: 0.75rem;
-    color: #6B7280;
+    color: var(--color-gray-dark);
     margin: 0.25rem 0 0 0;
   }
 
   .tier__divider-line {
     height: 1px;
-    background-color: #E0E0E0;
+    background-color: var(--color-gray-medium);
     margin: 1.25rem 0;
   }
 
   .tier__description {
     font-size: 0.95rem;
-    color: #0A1628;
+    color: var(--theme-primary);
     opacity: 0.8;
     line-height: 1.7;
     margin-bottom: 1.5rem;
@@ -495,12 +515,12 @@ const seo = {
     align-items: flex-start;
     gap: 0.5rem;
     font-size: 0.85rem;
-    color: #0A1628;
+    color: var(--theme-primary);
     opacity: 0.8;
   }
 
   .tier__features li svg {
-    color: #C9A84C;
+    color: var(--theme-accent);
     flex-shrink: 0;
     margin-top: 2px;
   }
@@ -514,33 +534,33 @@ const seo = {
     font-size: 0.9rem;
     text-decoration: none;
     transition: all 150ms ease;
-    border: 2px solid #0A1628;
-    color: #0A1628;
+    border: 2px solid var(--theme-primary);
+    color: var(--theme-primary);
     background-color: transparent;
   }
 
   .tier__cta:hover {
-    background-color: #0A1628;
+    background-color: var(--theme-primary);
     color: #ffffff;
   }
 
   .tier__cta--gold {
-    background-color: #C9A84C;
-    color: #0A1628;
-    border: 2px solid #C9A84C;
+    background-color: var(--theme-accent);
+    color: var(--theme-primary);
+    border: 2px solid var(--theme-accent);
   }
 
   .tier__cta--gold:hover {
     background-color: #b08f3a;
     border-color: #b08f3a;
-    color: #0A1628;
+    color: var(--theme-primary);
   }
 
   /* ============================================
      GUARANTEE
      ============================================ */
   .guarantee {
-    background-color: #C9A84C;
+    background-color: var(--theme-accent);
     padding: 4rem 1.5rem;
   }
 
@@ -551,27 +571,27 @@ const seo = {
   }
 
   .guarantee__icon {
-    color: #0A1628;
+    color: var(--theme-primary);
     margin-bottom: 1rem;
   }
 
   .guarantee__headline {
     font-size: clamp(1.75rem, 4vw, 2.5rem);
     font-weight: 800;
-    color: #0A1628;
+    color: var(--theme-primary);
     margin-bottom: 1.5rem;
   }
 
   .guarantee__body {
     font-size: 1.05rem;
-    color: #0A1628;
+    color: var(--theme-primary);
     line-height: 1.8;
     opacity: 0.9;
     margin-bottom: 2rem;
   }
 
   .guarantee__cta {
-    background-color: #0A1628;
+    background-color: var(--theme-primary);
     color: #ffffff;
     padding: 0.85rem 1.75rem;
     border-radius: 6px;
@@ -590,28 +610,42 @@ const seo = {
      FAQ
      ============================================ */
   .faq {
-    padding: 5rem 1.5rem;
+    padding: var(--section-margin) 1.5rem;
     background-color: #ffffff;
     text-align: center;
-}
+  }
 
-.faq__item {
+  .faq__item {
     text-align: left;
-}
+  }
 
   .faq__grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
+    gap: var(--theme-grid-gap);
     margin-top: 3rem;
     max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
-}
+  }
+
+  /* Tablet: 769px - 1024px */
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .faq__grid {
+      max-width: 800px;
+    }
+  }
+
+  /* Mobile: ≤768px */
+  @media (max-width: 768px) {
+    .faq__grid {
+      grid-template-columns: 1fr;
+    }
+  }
 
   .faq__item {
     padding: 1.5rem;
-    border: 1px solid #E0E0E0;
+    border: 1px solid var(--color-gray-medium);
     border-radius: 8px;
     transition: box-shadow 150ms ease;
   }
@@ -623,13 +657,13 @@ const seo = {
   .faq__item h3 {
     font-size: 1rem;
     font-weight: 700;
-    color: #0A1628;
+    color: var(--theme-primary);
     margin: 0 0 0.75rem 0;
   }
 
   .faq__item p {
     font-size: 0.9rem;
-    color: #0A1628;
+    color: var(--theme-primary);
     opacity: 0.75;
     line-height: 1.7;
     margin: 0;
@@ -639,8 +673,8 @@ const seo = {
      CTA
      ============================================ */
   .services-cta {
-    background-color: #0A1628;
-    padding: 5rem 1.5rem;
+    background-color: var(--theme-primary);
+    padding: var(--section-margin) 1.5rem;
   }
 
   .services-cta__inner {
@@ -671,8 +705,8 @@ const seo = {
   }
 
   .btn-gold {
-    background-color: #C9A84C;
-    color: #0A1628;
+    background-color: var(--theme-accent);
+    color: var(--theme-primary);
     padding: 0.85rem 1.75rem;
     border-radius: 6px;
     font-weight: 700;
@@ -701,7 +735,7 @@ const seo = {
 
   .btn-outline-navy:hover {
     background-color: #ffffff;
-    color: #0A1628;
+    color: var(--theme-primary);
   }
 
   /* ============================================
@@ -710,7 +744,7 @@ const seo = {
   .section-title {
     font-size: clamp(1.75rem, 4vw, 2.5rem);
     font-weight: 800;
-    color: #0A1628;
+    color: var(--theme-primary);
     margin-bottom: 0.5rem;
   }
 
@@ -719,26 +753,9 @@ const seo = {
     display: block;
     width: 60px;
     height: 4px;
-    background-color: #C9A84C;
+    background-color: var(--theme-accent);
     margin-top: 0.75rem;
     margin-bottom: 1rem;
-  }
-
-  /* ============================================
-     RESPONSIVE
-     ============================================ */
-  @media (max-width: 768px) {
-    .tiers__grid {
-      grid-template-columns: 1fr;
-    }
-
-    .faq__grid {
-      grid-template-columns: 1fr;
-    }
-
-    .services-hero {
-      padding: 4rem 1.5rem 3rem 1.5rem;
-    }
   }
 
 </style>

@@ -20,7 +20,7 @@ export const footerLists = [
     ],
   },
   {
-    title: 'Legal',
+    title: 'Legalal',
     items: [
       { title: 'Privacy Policy', slug: '/company/legal' },
       { title: 'Terms of Service', slug: '/company/legal' },
